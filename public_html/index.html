@@ -6,21 +6,23 @@
     <title>Startseite</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
         }
         .navbar {
-            background-color: #E9BFD6; /* Rosa Hintergrundfarbe */
+            background-color: #C5A3B6; /* Rosa Hintergrundfarbe */
             overflow: hidden;
+            padding: 0 20px;
         }
         .navbar .logo {
             float: left;
             font-family: 'Dancing Script', cursive;
-            font-size: 24px;
+            font-size: 32px;
             color: #fff;
             padding: 14px 20px;
         }
@@ -33,7 +35,25 @@
             text-decoration: none;
         }
         .navbar a:hover {
-            background-color: #E393C1; /* Dunkleres Rosa beim Hover */
+            background-color: #C5A3B6; 
+        }
+        .hero {
+            background-image: url('https://via.placeholder.com/1920x600'); /* Platzhalterbild */
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
         }
         .container {
             max-width: 800px;
@@ -41,10 +61,18 @@
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .container img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
         }
         h1 {
-            text-align: center;
             color: #333;
+        }
+        p {
+            color: #666;
         }
     </style>
 </head>
@@ -55,7 +83,12 @@
         <a href="#fake-news-netz">Das Fake-News-Netz</a>
         <a href="#social-media-druck">Der Social-Media Druck</a>
     </div>
+    <div class="hero">
+        <h1>Willkommen zu The Social Effect</h1>
+        <p>Soziale Netzwerke prägen unseren Alltag – doch wie beeinflussen sie unser Denken, Verhalten und unsere Chancen? Auf dieser Website erkunden wir interaktiv die Auswirkungen von Social Media: von psychologischen Effekten bis hin zu Karrieremöglichkeiten. Dabei beleuchten wir sowohl Chancen als auch Risiken und laden dich ein, dein Online-Verhalten kritisch zu hinterfragen. Tauche ein, entdecke und reflektiere – denn bewusste Vernetzung macht den Unterschied!</p>
+    </div>
     <div class="container">
+        <img src="https://via.placeholder.com/800x400" alt="Placeholder Image">
         <h1>Willkommen</h1>
         <p>Wählen Sie einen der Menüpunkte aus der Navigationsleiste oben, um mehr zu erfahren.</p>
     </div>
