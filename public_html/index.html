@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startseite</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -12,8 +14,15 @@
             padding: 0;
         }
         .navbar {
-            background-color: #007BFF;
+            background-color: #E9BFD6; /* Rosa Hintergrundfarbe */
             overflow: hidden;
+        }
+        .navbar .logo {
+            float: left;
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            color: #fff;
+            padding: 14px 20px;
         }
         .navbar a {
             float: left;
@@ -24,7 +33,7 @@
             text-decoration: none;
         }
         .navbar a:hover {
-            background-color: #0056b3;
+            background-color: #E393C1; /* Dunkleres Rosa beim Hover */
         }
         .container {
             max-width: 800px;
@@ -41,6 +50,7 @@
 </head>
 <body>
     <div class="navbar">
+        <div class="logo">The Social Effect</div>
         <a href="#psychologische-netz">Das psychologische Netz</a>
         <a href="#fake-news-netz">Das Fake-News-Netz</a>
         <a href="#social-media-druck">Der Social-Media Druck</a>
