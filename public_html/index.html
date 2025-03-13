@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +11,21 @@
             margin: 0;
             padding: 0;
         }
+        .navbar {
+            background-color: #007BFF;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #0056b3;
+        }
         .container {
             max-width: 800px;
             margin: 50px auto;
@@ -22,36 +37,17 @@
             text-align: center;
             color: #333;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin: 15px 0;
-        }
-        a {
-            display: block;
-            padding: 15px;
-            background-color: #007BFF;
-            color: #fff;
-            text-decoration: none;
-            text-align: center;
-            border-radius: 5px;
-        }
-        a:hover {
-            background-color: #0056b3;
-        }
     </style>
 </head>
-
 <body>
+    <div class="navbar">
+        <a href="#psychologische-netz">Das psychologische Netz</a>
+        <a href="#fake-news-netz">Das Fake-News-Netz</a>
+        <a href="#social-media-druck">Der Social-Media Druck</a>
+    </div>
     <div class="container">
         <h1>Willkommen</h1>
-        <ul>
-            <li><a href="#daspsychologische-netz">Das psychologische Netz</a></li>
-            <li><a href="#dasfake-news-netz">Das Fake-News-Netz</a></li>
-            <li><a href="#dersocial-media-druck">Der Social-Media Druck</a></li>
-        </ul>
+        <p>Wählen Sie einen der Menüpunkte aus der Navigationsleiste oben, um mehr zu erfahren.</p>
     </div>
 </body>
 </html>
