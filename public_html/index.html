@@ -3,66 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Social Effect</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Startseite</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #FAF7F7;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigationsleiste */
+        .navbar {
+            background-color: #C5A3B6; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .navbar .logo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 32px;
+            color: #fff;
+            padding: 14px 20px;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+        .navbar a:hover {
+            background-color: #b78da5;
+        }
+
+        /* Hero-Bereich */
+        .hero {
+            background-image: url('https://via.placeholder.com/1920x600'); /* Platzhalterbild */
+            background-size: cover;
+            background-position: top;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            color: #C5A3B6;
+            margin: 0;
+        }
+
+        /* Inhalt */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .container img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #C5A3B6;
+        }
+        p {
+            color: #C5A3B6;
+        }
+    </style>
 </head>
 <body>
-<<<<<<< HEAD
-    <nav>
-        <ul>
-            <li><a href="#fakenewsnetz.html">Fake-News</a></li>
-            <li><a href="#psychologischesnetz.html">Psychologisches Netz</a></li>
-            <li><a href="#socialmediadruck.html">Social-Media-Druck</a></li>
-        </ul>
-    </nav>
-    <header>
-        <h1>The Social Effect</h1>
-    </header>
-=======
 
+    <!-- Navigationsleiste -->
     <div class="navbar">
         <div class="logo">The Social Effect</div>
-<a href="fakenewsnetz.html">Das Fake-News-Netz</a>
-<a href="psychologischesnetz.html">Das psychologische Netz</a>
-<a href="socialmediadruck.html">Der Social-Media Druck</a>
-</div>
+        <a href="fakenewsnetz.html">Das Fake-News-Netz</a>
+        <a href="psychologischesnetz.html">Das psychologische Netz</a>
+        <a href="socialmediadruck.html">Der Social-Media Druck</a>
+    </div>
+
+    <!-- Hero-Bereich -->
     <div class="hero">
         <h1>Willkommen zu "The Social Effect"</h1>
-        <p>Soziale Netzwerke prägen immer mehr unseren Alltag – doch wie beeinflussen soziale Netzwerke unser Denken, Verhalten und unsere Chancen? Auf dieser Website erkunden wir interaktiv die Auswirkungen von Social Media: von psychologischen Effekten bis hin zu Karrieremöglichkeiten. Dabei beleuchten wir sowohl Chancen als auch Risiken und laden dich ein, dein Online-Verhalten kritisch zu hinterfragen. Tauche ein, entdecke und reflektiere – denn bewusste Vernetzung macht den Unterschied!</p>
+        <p>Soziale Netzwerke prägen unseren Alltag – doch wie beeinflussen sie unser Denken, Verhalten und unsere Chancen? Auf dieser Website erkunden wir interaktiv die Auswirkungen von Social Media: von psychologischen Effekten bis hin zu Karrieremöglichkeiten. Dabei beleuchten wir sowohl Chancen als auch Risiken und laden dich ein, dein Online-Verhalten kritisch zu hinterfragen.</p>
     </div>
->>>>>>> 2f0436fe0e20e3db27309670bfe7f011851dda01
+
+    <!-- Hauptinhalt -->
     <div class="container">
-        <section id="fake-news" class="tab-content active">
-            <img src="images/fakenews.png" alt="Fake News & Manipulation">
-            <h2>Manipulation durch Social Media</h2>
-            <ul>
-                <li>Wie sich Falschinformationen verbreiten</li>
-                <li>Politische Beeinflussung und Social Bots</li>
-                <li>Erkennen und Vermeiden von Fake News</li>
-            </ul>
-        </section>
-        <section id="psychologisches-netz" class="tab-content">
-            <img src="images/psychologie.png"alt="Psychologisches Netz">
-            <h2>Warum wir Social Media nicht lassen können</h2>
-            <ul>
-                <li>Die Rolle von Likes, Algorithmen und Dopamin</li>
-                <li>Fear of Missing Out (FOMO) und Doomscrolling</li>
-                <li>Gamification-Elemente und Suchtverhalten</li>
-            </ul>
-        </section>
-        <section id="social-media-druck" class="tab-content">
-            <img src="images/SocialMediaDruck
-					  "SocialMediaDruck.png" alt="Social Media Druck">
-            <h2>Der Druck von Social Media</h2>
-            <ul>
-                <li>Der Einfluss von Schönheitsidealen</li>
-                <li>Die Rolle von Filtern & KI-generierten Gesichtern</li>
-                <li>Auswirkungen auf Selbstwertgefühl & mentale Gesundheit</li>
-            </ul>
-        </section>
+        <img src="SocialMedia.jpg" alt="Social Media">
     </div>
-    <script src="script.js"></script>
+
 </body>
 </html>
-
-
