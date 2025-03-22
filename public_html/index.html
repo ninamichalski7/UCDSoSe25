@@ -17,7 +17,7 @@
 
         /* Navigationsleiste */
         .navbar {
-            background-color: #C5A3B6; 
+            background-color: #C5A3B6;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -29,10 +29,15 @@
             color: #fff;
             padding: 14px 20px;
         }
+        .nav-links {
+            display: flex;
+            gap: 10px; /* Reduzierter Abstand zwischen den Links */
+        }
         .navbar a {
             color: #fff;
             text-decoration: none;
-            padding: 14px 20px;
+            padding: 12px 16px; /* Weniger Padding für kompaktere Links */
+            transition: background-color 0.3s;
         }
         .navbar a:hover {
             background-color: #b78da5;
@@ -87,9 +92,11 @@
     <!-- Navigationsleiste -->
     <div class="navbar">
         <div class="logo">The Social Effect</div>
-        <a href="fakenewsnetz.html">Das Fake-News-Netz</a>
-        <a href="psychologischesnetz.html">Das psychologische Netz</a>
-        <a href="socialmediadruck.html">Der Social-Media Druck</a>
+        <div class="nav-links">
+            <a href="fakenewsnetz.html">Das Fake-News-Netz</a>
+            <a href="psychologischesnetz.html">Das psychologische Netz</a>
+            <a href="socialmediadruck.html">Der Social-Media Druck</a>
+        </div>
     </div>
 
     <!-- Hero-Bereich -->
