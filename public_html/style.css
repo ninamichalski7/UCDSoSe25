@@ -16,27 +16,31 @@
 		}
 		
         .navbar {
-            background-color: #C5A3B6; /* Rosa Hintergrundfarbe */
-            overflow: hidden;
-            padding: 0 20px;
-        }
-        .navbar .logo {
-            float: left;
-            font-family: 'Dancing Script', cursive;
-            font-size: 32px;
-            color: #fff;
-            padding: 14px 20px;
-        }
-        .navbar a {
-            float: left;
-            display: block;
-            color: #fff;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-        .navbar a:hover {
-    background-color: #b58ea6; /* Dunklerer Ton für bessere Sichtbarkeit */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #C5A3B6;
+    padding: 15px 20px;
+}
+
+.logo h1 {
+    margin: 0;
+    color: #fff;
+    font-family: 'Dancing Script', cursive;
+    font-size: 28px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    background-color: #b58ea6;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
         .hero {
             background-image: url('https://via.placeholder.com/1920x600'); /* Platzhalterbild */
