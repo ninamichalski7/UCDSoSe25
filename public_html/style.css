@@ -3,18 +3,23 @@
  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-			body {
-			font-family: 'Roboto', sans-serif;
-			background-color: #FAF7F7;
-			background-image: url('images/Background.jpg'); 
-			background-size: cover;
-			background-position: center;
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-			margin: 0;
-			padding: 0;
-		}
-		
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #FAF7F7;
+            margin: 0;
+            padding: 0;
+        }
+
+body {
+    background-image: url('images/Background.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
         .navbar {
             background-color: #C5A3B6; /* Rosa Hintergrundfarbe */
             overflow: hidden;
@@ -36,8 +41,8 @@
             text-decoration: none;
         }
         .navbar a:hover {
-    background-color: #b58ea6; /* Dunklerer Ton für bessere Sichtbarkeit */
-}
+            background-color: #C5A3B6; 
+        }
         .hero {
             background-image: url('https://via.placeholder.com/1920x600'); /* Platzhalterbild */
             background-size: cover;
@@ -54,7 +59,7 @@
         }
         .hero h1 {
             font-size: 48px;
-            color: #C5A3B6;
+            color: #C5A3B6
 			margin: 0;
         }
         .container {
@@ -76,3 +81,4 @@
         p {
             color: #C5A3B6;
         }
+
