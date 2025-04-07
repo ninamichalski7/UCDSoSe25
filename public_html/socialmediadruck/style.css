@@ -1,2 +1,47 @@
 /* CSS Document */
 
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-size: cover; /* Hintergrundbild skalieren, um den gesamten Bildschirm zu füllen */
+            color: #3E8440; /* Textfarbe */
+        }
+        nav {
+            background-color: #BADD7F; /* Aktualisierte Hintergrundfarbe der Navigationsleiste */
+            padding: 1em;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: #3E8440;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 0.5em 1em;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #EFACA5; /* Hover-Farbe */
+        }
+        .content {
+            text-align: center;
+            padding: 2em;
+            background-color: rgba(255, 255, 255, 0.8); /* Weißer transparenter Hintergrund für bessere Lesbarkeit */
+            margin: 2em;
+            border-radius: 10px;
+        }
+        .content h1 {
+            color: #3E8440; /* Farbe der Überschrift */
+            font-size: 3em;
+        }
+        .content p {
+            font-size: 1.2em;
+        }
