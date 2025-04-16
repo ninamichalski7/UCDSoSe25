@@ -128,7 +128,62 @@ header {
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
   padding: 20px;
 }
+/* Die Position des Dropdowns */
+.dropdown-click {
+  position: relative;
+}
 
+/* Der Button zum Öffnen des Dropdowns */
+.dropdown-toggle {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* Das Dropdown-Menü (unsichtbar, aber vorhanden) */
+.dropdown-menu {
+  visibility: hidden; /* Menü standardmäßig unsichtbar */
+  opacity: 0; /* Unsichtbar */
+  position: absolute;
+  background-color: transparent; /* Kein Hintergrund */
+  min-width: 240px;
+  box-shadow: none; /* Entfernt den Schatten, falls gewünscht */
+  border-radius: 8px;
+  z-index: -1; /* Das Dropdown wird hinter dem Button gehalten */
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+  pointer-events: none; /* Verhindert Interaktionen, wenn es unsichtbar ist */
+  transition: opacity 0.3s ease, visibility 0s 0.3s; /* Weiche Übergänge */
+}
+
+/* Dropdown-Menü anzeigen, wenn mit der Maus über das Dropdown oder den Button gefahren wird */
+.dropdown-click:hover .dropdown-menu,
+.dropdown-menu:hover {
+  visibility: visible; /* Sichtbar machen */
+  opacity: 1; /* Vollständig sichtbar */
+  pointer-events: auto; /* Ermöglicht Interaktionen, wenn das Menü sichtbar ist */
+  z-index: 9999; /* Über den anderen Inhalten */
+  transition: opacity 0.3s ease, visibility 0s; /* Sofortige Sichtbarkeit bei Hover */
+}
+
+/* Links im Dropdown-Menü */
+.dropdown-menu li a {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: var(--dark);
+  background-color: var(--lightgreen); /* Heller Grünton als Hintergrund */
+  border-radius: 4px; /* Optional: Abgerundete Ecken */
+}
+
+/* Hover-Effekt für Links im Menü */
+.dropdown-menu li a:hover {
+  background-color: var(--cream); /* Helleres Highlight beim Hover */
+}
 
 /* Social-Media-Bereich */
 

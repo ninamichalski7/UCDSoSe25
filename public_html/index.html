@@ -1,22 +1,30 @@
-
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Social Effect</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <nav class="main-nav">
       <div class="logo">The Social Effect</div>
       <ul class="nav-right">
-		<li><a href="index.html">Startseite</a></li>
+        <li><a href="index.html">Startseite</a></li>
         <li><a href="psychologie/psychologische-effekte.html">Psychologische Effekte</a></li>
-        <li><a href="socialmedia/social-media-netzwerke.html">Social Media Netzwerke</a></li>
-        <li><a href="fakenews/fake-news-netze.html"> Fake News Netze</a></li>
+        
+        <!-- Dropdown -->
+        <li class="dropdown-click">
+          <button class="dropdown-toggle">Social Media Netzwerke ▼</button>
+          <ul class="dropdown-menu">
+            <li><a href="socialmedia/einfluss-von-plattformen.html">Filter, Realität – und dazwischen du?</a></li>
+            <li><a href="socialmedia/mentale-gesundheit.html">Mentale Gesundheit &amp; Selbstwert</a></li>
+            <li><a href="socialmedia/reflektierter-umgang.html">Tipps für den Umgang mit Social Media</a></li>
+          </ul>
+        </li>
+        
+        <li><a href="fakenews/fake-news-netze.html">Fake News Netze</a></li>
       </ul>
     </nav>
   </header>
@@ -45,5 +53,20 @@
       <a href="fakenews/fake-news-netze.html">Mehr erfahren</a>
     </div>
   </section>
+	<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector(".dropdown-toggle");
+    const menu = document.querySelector(".dropdown-menu");
+
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    });
+
+    document.addEventListener("click", () => {
+      menu.style.display = "none";
+    });
+  });
+</script>
 </body>
 </html>
