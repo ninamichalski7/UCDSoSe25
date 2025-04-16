@@ -3,8 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Einfluss von TikTok & Instagram</title>
+  <title>Filter. Realität. Und dazwischen du?</title>
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    .hero-zitat {
+      background: linear-gradient(135deg, #da7d71, #c96a60);
+      padding: 40px 20px;
+      text-align: center;
+      font-style: italic;
+      font-size: 1.3em;
+      color: var(--white);
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: relative;
+      animation: fadeInQuote 1s ease-in-out;
+    }
+
+    .hero-zitat::before {
+      content: "❝";
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-size: 2.5em;
+      opacity: 0.2;
+    }
+
+    @keyframes fadeInQuote {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .vergleich-horiz {
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      background: linear-gradient(135deg, var(--cream), var(--white));
+      border-radius: 16px;
+      padding: 50px 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      gap: 30px;
+      overflow: hidden;
+    }
+
+    .vergleich-horiz::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M0 20 Q50 0 100 20 T200 20 T300 20 T400 20 T500 20 T600 20 T700 20 T800 20" stroke="%23efaca5" stroke-width="1" fill="transparent" opacity="0.1"/></svg>');
+      background-repeat: repeat-x;
+      background-position: center;
+      z-index: 0;
+    }
+
+    .vergleich-horiz div {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      z-index: 1;
+    }
+
+    .vergleich-horiz h4 {
+      color: var(--peach);
+    }
+
+    .zwei-spalten {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .zwei-spalten div {
+      flex: 1;
+      background-color: var(--cream);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .realitaetskarte {
+      background-color: var(--white);
+      border-left: 5px solid var(--peach);
+      padding: 20px;
+      margin: 40px auto;
+      max-width: 700px;
+      font-size: 1.1em;
+      border-radius: 12px;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -19,16 +117,60 @@
     </nav>
   </header>
 
-  <section class="subpage-section">
-    <h1>Einfluss von TikTok & Instagram</h1>
-    <p>Ob Trends, Challenges oder "That Girl"-Morning-Routines – Plattformen wie TikTok und Instagram setzen Standards. Was populär ist, wird tausendfach geteilt. Und: Die Algorithmen zeigen dir vor allem das, was hohe Klickzahlen bringt.</p>
-    <p>Was das bedeutet? Wir sehen immer wieder dieselben Schönheitsideale, dieselben Filter, dieselben Botschaften – und glauben irgendwann, das sei „normal“.</p>
-    <p>Viele dieser Inhalte sind aber inszeniert. Sie zeigen das „Highlight Reel“ – nicht die Realität. Und trotzdem beeinflussen sie, wie wir uns selbst sehen.</p>
+  <main class="tipps-interaktiv">
+    <h1>Filter & Realität. Und dazwischen du?</h1>
+
+    <div class="hero-zitat">
+      „Niemand wacht mit Glowy Skin & Iced Coffee in der Hand auf.“<br />
+      <span>– Realität</span>
+    </div>
+
+    <section class="vergleich-horiz">
+      <div>
+        <h4>📷 Was Social Media zeigt</h4>
+        <ul>
+          <li>Perfekte Morgenroutinen („That Girl“)</li>
+          <li>Strahlende Haut ohne Unreinheiten</li>
+          <li>Ordnung, Disziplin, Erfolg</li>
+          <li>Filter, Licht, Posen, Musik</li>
+        </ul>
+      </div>
+      <div>
+        <h4>👀 Was wirklich ist</h4>
+        <ul>
+          <li>Müde Augen, Hautprobleme, Chaos</li>
+          <li>Zweifel, Unsicherheit, Vergleiche</li>
+          <li>Nicht jeder Tag ist „Produktiv-Content“</li>
+          <li>Manchmal einfach nur Alltag</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="zwei-spalten">
+      <div>
+        <h3>Filter & KI – wo ist die Grenze?</h3>
+        <p>Was du auf Instagram oder TikTok siehst, ist oft mehrfach bearbeitet. Haut wird glatter gemacht, Zähne weißer, Gesichter schmaler. KI-Avatare übernehmen sogar ganze Videos. Kein Wunder, dass viele sich selbst „zu normal“ fühlen.</p>
+      </div>
+      <div>
+        <h3>Schönheitsideale & Trends</h3>
+        <p>Trends wie der „Clean Girl“-Look oder der perfekte Glow setzen Standards, die kaum realistisch sind. Dabei gibt es so viele Arten, schön zu sein. Social Media zeigt aber oft nur eine kleine, kuratierte Auswahl davon.</p>
+      </div>
+    </div>
+
+    <div class="realitaetskarte">
+      <h3>🧠 Realitätscheck</h3>
+      <p>Du musst nicht perfekt aufwachen, 3 Liter Wasser trinken und dabei Journaling machen, um „genug“ zu sein. Vergleiche dich nicht mit Inszenierungen. Vergleich dich mit dir selbst – von gestern.</p>
+    </div>
+
     <a href="social-media-netzwerke.html" class="back-link">Zurück zur Übersicht</a>
-  </section>
+  </main>
 
   <footer class="site-footer">
     <p>&copy; 2025 The Social Effect</p>
   </footer>
 </body>
 </html>
+
+
+
+
