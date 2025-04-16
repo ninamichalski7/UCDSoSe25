@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentale Gesundheit & Selbstwert</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="main-nav">
+      <div class="logo">The Social Effect</div>
+      <ul class="nav-right">
+        <li><a href="../index.html">Startseite</a></li>
+        <li><a href="../psychologie/psychologische-effekte.html">Psychologische Effekte</a></li>
+        <li><a href="social-media-netzwerke.html" class="active">Social Media Netzwerke</a></li>
+        <li><a href="../fakenews/fake-news-netze.html">Fake News Netze</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="tipps-interaktiv">
+    <h1>Mentale Gesundheit & Selbstwert</h1>
+    <p>Social Media beeinflusst, wie wir uns selbst wahrnehmen – oft ohne dass wir es merken. Hier findest du Infos, Hintergründe und Impulse zum Nachdenken.</p>
+
+    <details class="tipps-block">
+      <summary>🧠 Warum Social Media unseren Selbstwert beeinflusst</summary>
+      <div>
+        <p>Auf Social Media sehen wir ständig perfekte Körper, schöne Orte und scheinbar mühelose Karrieren. Das kann das Gefühl verstärken, selbst nicht gut genug zu sein – besonders bei Jugendlichen, die sich noch selbst finden.</p>
+        <p>Studien zeigen, dass häufige Vergleiche mit anderen auf Social Media das Selbstwertgefühl senken und zu Unzufriedenheit führen können.</p>
+        <p><strong>Reflexionsfrage:</strong> Hast du dich heute schon mit jemandem verglichen? Warum?</p>
+      </div>
+    </details>
+
+    <details class="tipps-block">
+      <summary>😴 Wie Social Media unsere mentale Gesundheit beeinflussen kann</summary>
+      <div>
+        <p>Langes Scrollen, besonders am Abend, kann zu Schlafstörungen führen. Auch ständiger Informationsfluss, Likes und Kommentare sorgen für Druck und Überreizung.</p>
+        <ul>
+          <li>Schlechterer Schlaf</li>
+          <li>Stimmungsschwankungen</li>
+          <li>Geringere Konzentration</li>
+          <li>Höheres Stresslevel</li>
+        </ul>
+        <p><strong>Denkanstoß:</strong> Was passiert mit deinem Kopf, wenn du mal 2 Stunden ohne Handy bist?</p>
+      </div>
+    </details>
+
+    <details class="tipps-block">
+      <summary>💬 Was du für dich tun kannst</summary>
+      <div>
+        <p>Dein Selbstwert hängt nicht von Followern oder Filtern ab. Je bewusster du dich mit dir selbst beschäftigst, desto weniger Macht haben äußere Vergleiche.</p>
+        <ul>
+          <li>Mach Social-Media-freie Zeiten zu einer Gewohnheit</li>
+          <li>Folge Menschen, die echte Einblicke geben</li>
+          <li>Sprich über deine Gefühle – mit echten Menschen</li>
+          <li>Erinnere dich an Dinge, die du gut kannst</li>
+        </ul>
+      </div>
+    </details>
+
+    <section class="subpage-section">
+      <h2>Mini-Test: Wie geht's dir mit Social Media?</h2>
+      <p>Klicke an, was auf dich zutrifft:</p>
+
+      <form id="mini-test">
+        <label><input type="checkbox" class="mini-check" /> Ich fühle mich manchmal schlechter, nachdem ich auf Social Media war.</label><br />
+        <label><input type="checkbox" class="mini-check" /> Ich vergleiche mich oft mit anderen in meinem Feed.</label><br />
+        <label><input type="checkbox" class="mini-check" /> Ich hätte gern öfter eine Pause vom Bildschirm, schaffe es aber nicht.</label>
+      </form>
+
+      <div id="mini-result"></div>
+    </section>
+
+    <a href="social-media-netzwerke.html" class="back-link">Zurück zur Übersicht</a>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 The Social Effect</p>
+  </footer>
+
+  <script>
+    const miniChecks = document.querySelectorAll('.mini-check');
+    const miniResult = document.getElementById('mini-result');
+
+    miniChecks.forEach(cb => cb.addEventListener('change', () => {
+      const score = [...miniChecks].filter(cb => cb.checked).length;
+
+      if (score === 0) {
+        miniResult.textContent = '✅ Super! Du scheinst gut mit Social Media umzugehen.';
+      } else if (score === 1) {
+        miniResult.textContent = '🙂 Du reflektierst bereits. Vielleicht helfen dir unsere Tipps weiter.';
+      } else if (score === 2) {
+        miniResult.textContent = '⚠️ Sei achtsam – Social Media beeinflusst dich spürbar. Kleine Veränderungen könnten helfen.';
+      } else {
+        miniResult.textContent = '🧠 Vielleicht tut dir eine bewusste Pause gut. Sprich auch mal mit jemandem darüber.';
+      }
+    }));
+  </script>
+</body>
+</html>
+
+

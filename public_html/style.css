@@ -128,3 +128,293 @@ header {
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
   padding: 20px;
 }
+
+
+/* Social-Media-Bereich */
+
+/* === Farbpalette === */
+:root {
+  --peach: #efaca5;
+  --lightgreen: #badd7f;
+  --cream: #f7efda;
+  --white: #ffffff;
+  --dark: #222222;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--cream);
+  color: var(--dark);
+}
+
+h1, h2 {
+  color: var(--peach);
+}
+
+/* === Header & Navigation === */
+header {
+  background-color: var(--peach);
+  padding: 10px 0;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  color: var(--white);
+  flex-wrap: wrap;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-left li a,
+.nav-right li a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logo a,
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--white);
+  text-decoration: none;
+  text-align: center;
+}
+
+/* === Hero-Bereich Startseite === */
+.hero-section {
+  background-color: var(--cream);
+  padding: 60px 20px;
+}
+
+.hero-container {
+  background-color: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero-text {
+  text-align: left;
+}
+
+.hero-label {
+  font-weight: bold;
+  color: var(--peach);
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.hero-text h1 {
+  font-size: 2em;
+  margin: 10px 0;
+  color: var(--peach);
+}
+
+.hero-desc {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.button {
+  background-color: var(--peach);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: var(--lightgreen);
+  color: var(--dark);
+}
+
+/* === Themenübersicht Startseite === */
+.themen-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 20px;
+  background-color: var(--white);
+}
+
+.thema-box {
+  background-color: var(--cream);
+  border-radius: 16px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.thema-box:hover {
+  transform: scale(1.03);
+}
+
+.thema-box h2 {
+  margin-top: 0;
+  color: var(--peach);
+}
+
+.thema-box p {
+  margin-bottom: 15px;
+}
+
+.thema-box a {
+  color: var(--dark);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* === Unterseitenbereich === */
+.subpage-section {
+  background-color: var(--white);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  margin: auto;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.subpage-section h1,
+.subpage-section h2 {
+  color: var(--peach);
+  margin-bottom: 20px;
+}
+
+.subpage-section p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: bold;
+  background-color: var(--peach);
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: var(--white);
+}
+
+.back-link:hover {
+  background-color: var(--lightgreen);
+  color: var(--dark);
+}
+
+/* === Footer === */
+.site-footer {
+  background-color: var(--peach);
+  color: var(--white);
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+/* === Aktive Navigation === */
+.active {
+  text-decoration: underline;
+}
+
+/* === Interaktive Tipps-Boxen === */
+.tipps-interaktiv {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.tipps-block {
+  background-color: var(--white);
+  border: 2px solid var(--peach);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.tipps-block summary {
+  background-color: var(--peach);
+  color: var(--white);
+  padding: 15px 20px;
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  list-style: none;
+}
+
+.tipps-block[open] summary {
+  background-color: var(--lightgreen);
+  color: var(--dark);
+}
+
+.tipps-block div {
+  padding: 20px;
+  background-color: var(--cream);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.tipps-block ul {
+  padding-left: 20px;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Fortschrittsfeld & Mini-Test === */
+#progress-form label,
+#mini-test label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+#progress-form input[type="checkbox"],
+#mini-test input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+#reward-message,
+#mini-result {
+  transition: opacity 0.3s ease-in-out;
+  color: var(--peach);
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+#mini-test {
+  background-color: var(--white);
+  border: 2px solid var(--peach);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  margin-top: 20px;
+}
