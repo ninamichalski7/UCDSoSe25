@@ -128,12 +128,12 @@ header {
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
   padding: 20px;
 }
-/* Die Position des Dropdowns */
+/* Positionierung des Dropdowns */
 .dropdown-click {
   position: relative;
 }
 
-/* Der Button zum Öffnen des Dropdowns */
+/* Button zum Öffnen des Dropdowns */
 .dropdown-toggle {
   background: none;
   border: none;
@@ -143,31 +143,31 @@ header {
   cursor: pointer;
 }
 
-/* Das Dropdown-Menü (unsichtbar, aber vorhanden) */
-.dropdown-menu {
-  visibility: hidden; /* Menü standardmäßig unsichtbar */
-  opacity: 0; /* Unsichtbar */
-  position: absolute;
-  background-color: transparent; /* Kein Hintergrund */
-  min-width: 240px;
-  box-shadow: none; /* Entfernt den Schatten, falls gewünscht */
-  border-radius: 8px;
-  z-index: -1; /* Das Dropdown wird hinter dem Button gehalten */
-  margin-top: 10px;
-  padding: 0;
-  list-style: none;
-  pointer-events: none; /* Verhindert Interaktionen, wenn es unsichtbar ist */
-  transition: opacity 0.3s ease, visibility 0s 0.3s; /* Weiche Übergänge */
+/* Positionierung des Dropdown-Containers */
+.dropdown-click {
+  position: relative;
+  padding-bottom: 10px; /* Verhindert Hover-Verlust beim Übergang zum Menü */
+  display: inline-block;
 }
 
-/* Dropdown-Menü anzeigen, wenn mit der Maus über das Dropdown oder den Button gefahren wird */
-.dropdown-click:hover .dropdown-menu,
-.dropdown-menu:hover {
-  visibility: visible; /* Sichtbar machen */
-  opacity: 1; /* Vollständig sichtbar */
-  pointer-events: auto; /* Ermöglicht Interaktionen, wenn das Menü sichtbar ist */
-  z-index: 9999; /* Über den anderen Inhalten */
-  transition: opacity 0.3s ease, visibility 0s; /* Sofortige Sichtbarkeit bei Hover */
+/* Dropdown-Menü standardmäßig unsichtbar */
+.dropdown-menu {
+  display: none; /* Menü standardmäßig unsichtbar */
+  position: absolute;
+  top: 100%; /* Direkt unter dem Toggle-Element */
+  left: 0;
+  background-color: var(--lightgreen); /* Hintergrundfarbe des Menüs */
+  min-width: 240px;
+  box-shadow: none;
+  border-radius: 8px;
+  z-index: 9999;
+  padding: 0;
+  list-style: none;
+}
+
+/* Zeigt das Dropdown-Menü bei Hover an */
+.dropdown-click:hover .dropdown-menu {
+  display: block;
 }
 
 /* Links im Dropdown-Menü */
@@ -176,7 +176,7 @@ header {
   padding: 12px 16px;
   text-decoration: none;
   color: var(--dark);
-  background-color: var(--lightgreen); /* Heller Grünton als Hintergrund */
+  background-color: var(--lightgreen); /* Hintergrundfarbe für Links */
   border-radius: 4px; /* Optional: Abgerundete Ecken */
 }
 
