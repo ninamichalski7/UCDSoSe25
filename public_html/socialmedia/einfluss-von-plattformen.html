@@ -6,6 +6,48 @@
   <title>Einfluss von Plattformen</title>
   <link rel="stylesheet" href="../style.css" />
   <style>
+    .page-heading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 50px 0 40px 0;
+    }
+
+    .search-bar {
+      background: #fff;
+      padding: 18px 32px;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      font-size: 2em;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      min-width: 320px;
+      max-width: 90%;
+    }
+
+    .search-icon {
+      margin-right: 12px;
+      color: #bbb;
+    }
+
+    .typed-text {
+      color: var(--peach);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .cursor {
+      font-weight: bold;
+      color: var(--peach);
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
     .hero-zitat {
       background: linear-gradient(135deg, #da7d71, #c96a60);
       padding: 40px 20px;
@@ -14,93 +56,84 @@
       font-size: 1.3em;
       color: var(--white);
       border-radius: 12px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      position: relative;
+      margin: 40px auto;
+      max-width: 900px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       animation: fadeInQuote 1s ease-in-out;
     }
 
-    .hero-zitat::before {
-      content: "❝";
-      position: absolute;
-      top: 10px;
-      left: 20px;
-      font-size: 2.5em;
-      opacity: 0.2;
-    }
-
-    @keyframes fadeInQuote {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .vergleich-horiz {
-      position: relative;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      background: linear-gradient(135deg, var(--cream), var(--white));
-      border-radius: 16px;
-      padding: 50px 30px;
-      margin-bottom: 40px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      gap: 30px;
-      overflow: hidden;
-    }
-
-    .vergleich-horiz::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path d="M0 20 Q50 0 100 20 T200 20 T300 20 T400 20 T500 20 T600 20 T700 20 T800 20" stroke="%23efaca5" stroke-width="1" fill="transparent" opacity="0.1"/></svg>');
-      background-repeat: repeat-x;
-      background-position: center;
-      z-index: 0;
-    }
-
-    .vergleich-horiz div {
-      position: relative;
-      width: 100%;
-      max-width: 400px;
-      z-index: 1;
-    }
-
-    .vergleich-horiz h4 {
-      color: var(--peach);
-    }
-
-    .zwei-spalten {
+    .vergleich-cards {
       display: flex;
       gap: 40px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
+      justify-content: center;
+      margin: 60px 0;
     }
 
-    .zwei-spalten div {
-      flex: 1;
-      background-color: var(--cream);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    .vergleich-cards .card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      width: 400px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+      cursor: pointer;
+    }
+
+    .vergleich-cards .card.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .vergleich-cards .card:hover {
+      background: linear-gradient(135deg, var(--cream), var(--white));
+    }
+
+    .vergleich-cards .card h4 {
+      background-color: var(--peach);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 12px 12px 0 0;
+      margin: -30px -30px 20px -30px;
+      font-size: 1.2em;
+    }
+
+    .asym-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 80px auto;
+    }
+
+    .asym-grid .box {
+      background-color: var(--white);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    .asym-grid .box h3 {
+      margin-top: 0;
     }
 
     .realitaetskarte {
       background-color: var(--white);
       border-left: 5px solid var(--peach);
-      padding: 20px;
-      margin: 40px auto;
+      padding: 24px;
+      margin: 60px auto;
       max-width: 700px;
       font-size: 1.1em;
       border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.03);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 60px auto 0 auto;
+      text-align: center;
     }
   </style>
 </head>
@@ -109,34 +142,37 @@
     <nav class="main-nav">
       <div class="logo">The Social Effect</div>
       <ul class="nav-right">
-        <li><a href="index.html">Startseite</a></li>
+        <li><a href="../index.html">Startseite</a></li>
         <li><a href="../psychologie/psychologische-effekte.html">Psychologische Effekte</a></li>
-        
-        <!-- Hier wird das Dropdown-Menü eingefügt -->
         <li class="dropdown-click">
           <button class="dropdown-toggle">Social Media Netzwerke ▼</button>
           <ul class="dropdown-menu">
             <li><a href="einfluss-von-plattformen.html">Filter, Realität – und dazwischen du?</a></li>
-            <li><a href="mentale-gesundheit.html">Mentale Gesundheit &amp; Selbstwert</a></li>
+            <li><a href="mentale-gesundheit.html">Mentale Gesundheit & Selbstwert</a></li>
             <li><a href="reflektierter-umgang.html">Tipps für den Umgang mit Social Media</a></li>
           </ul>
         </li>
-
         <li><a href="../fakenews/fake-news-netze.html">Fake News Netze</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="tipps-interaktiv">
-    <h1>Filter, Realität – und dazwischen du?</h1>
+    <div class="page-heading">
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <span class="typed-text" id="typed-text"></span>
+        <span class="cursor">|</span>
+      </div>
+    </div>
 
     <div class="hero-zitat">
       „Niemand wacht mit Glowy Skin & Iced Coffee in der Hand auf.“<br />
       <span>– Realität</span>
     </div>
 
-    <section class="vergleich-horiz">
-      <div>
+    <section class="vergleich-cards">
+      <div class="card" id="scroll-to-ki">
         <h4>📷 Was Social Media zeigt</h4>
         <ul>
           <li>Perfekte Morgenroutinen („That Girl“)</li>
@@ -145,7 +181,7 @@
           <li>Filter, Licht, Posen, Musik</li>
         </ul>
       </div>
-      <div>
+      <div class="card" id="scroll-to-reality">
         <h4>👀 Was wirklich ist</h4>
         <ul>
           <li>Müde Augen, Hautprobleme, Chaos</li>
@@ -156,18 +192,18 @@
       </div>
     </section>
 
-    <div class="zwei-spalten">
-      <div>
+    <div class="asym-grid" id="ki-section">
+      <div class="box">
         <h3>Filter & KI – wo ist die Grenze?</h3>
         <p>Was du auf Instagram oder TikTok siehst, ist oft mehrfach bearbeitet. Haut wird glatter gemacht, Zähne weißer, Gesichter schmaler. KI-Avatare übernehmen sogar ganze Videos. Kein Wunder, dass viele sich selbst „zu normal“ fühlen.</p>
       </div>
-      <div>
+      <div class="box">
         <h3>Schönheitsideale & Trends</h3>
         <p>Trends wie der „Clean Girl“-Look oder der perfekte Glow setzen Standards, die kaum realistisch sind. Dabei gibt es so viele Arten, schön zu sein. Social Media zeigt aber oft nur eine kleine, kuratierte Auswahl davon.</p>
       </div>
     </div>
 
-    <div class="realitaetskarte">
+    <div class="realitaetskarte" id="reality-reminder">
       <h3>✅ Reality-Reminder</h3>
       <ul>
         <li>Ich weiß, dass Filter Gesichter verändern</li>
@@ -183,6 +219,43 @@
   <footer class="site-footer">
     <p>&copy; 2025 The Social Effect</p>
   </footer>
+
+  <script>
+    const typedText = document.getElementById("typed-text");
+    const text = "Filter, Realität – und dazwischen du?";
+    let index = 0;
+    function type() {
+      if (index < text.length) {
+        typedText.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 80);
+      }
+    }
+    window.onload = type;
+
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+
+    document.getElementById('scroll-to-ki').addEventListener('click', () => {
+      document.getElementById('ki-section').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('scroll-to-reality').addEventListener('click', () => {
+      document.getElementById('reality-reminder').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
 

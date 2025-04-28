@@ -5,7 +5,102 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Praktische Tipps – Reflektierter Umgang</title>
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    .page-heading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 50px 0 20px 0;
+    }
+
+    .search-bar {
+      background: #fff;
+      padding: 18px 32px;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      font-size: 2em;
+      display: flex;
+      align-items: center;
+      min-width: 320px;
+      max-width: 90%;
+    }
+
+    .search-icon {
+      margin-right: 12px;
+      color: #bbb;
+    }
+
+    .typed-text {
+      color: var(--peach);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .cursor {
+      font-weight: bold;
+      color: var(--peach);
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .intro-text {
+      text-align: center;
+      color: #333;
+      font-size: 1.1em;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 20px auto 50px auto;
+    }
+
+    .mini-test-box {
+      background: var(--cream);
+      padding: 30px;
+      border-radius: 16px;
+      max-width: 700px;
+      margin: 40px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .mini-test-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #mini-test label {
+      display: block;
+      margin-bottom: 15px;
+      font-size: 1.1em;
+    }
+
+    #progress-output {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    #reward-message {
+      margin-top: 15px;
+      font-weight: bold;
+      color: var(--peach);
+      display: none;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 50px auto 0 auto;
+      text-align: center;
+      background: var(--peach);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+    }
+  </style>
 </head>
+
 <body>
   <header>
     <nav class="main-nav">
@@ -13,25 +108,33 @@
       <ul class="nav-right">
         <li><a href="../index.html">Startseite</a></li>
         <li><a href="../psychologie/psychologische-effekte.html">Psychologische Effekte</a></li>
-        
-        <!-- Hier wird das Dropdown-Menü eingefügt -->
         <li class="dropdown-click">
           <button class="dropdown-toggle">Social Media Netzwerke ▼</button>
           <ul class="dropdown-menu">
             <li><a href="einfluss-von-plattformen.html">Filter, Realität – und dazwischen du?</a></li>
-            <li><a href="mentale-gesundheit.html">Mentale Gesundheit &amp; Selbstwert</a></li>
+            <li><a href="mentale-gesundheit.html">Mentale Gesundheit & Selbstwert</a></li>
             <li><a href="reflektierter-umgang.html">Tipps für den Umgang mit Social Media</a></li>
           </ul>
         </li>
-
         <li><a href="../fakenews/fake-news-netze.html">Fake News Netze</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="tipps-interaktiv">
-    <h1>Praktische Tipps für den Umgang mit Social Media</h1>
-    <p>Social Media beeinflusst, wie wir uns selbst und andere sehen. Umso wichtiger ist ein bewusster Umgang. Die folgenden Tipps helfen dir, achtsamer zu scrollen, dich weniger zu vergleichen – und dich selbst nicht zu verlieren.</p>
+    <div class="page-heading">
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <span class="typed-text" id="typed-text"></span>
+        <span class="cursor">|</span>
+      </div>
+    </div>
+
+    <div class="intro-text">
+      Social Media beeinflusst, wie wir uns selbst und andere sehen.  
+      Umso wichtiger ist ein bewusster Umgang.  
+      Die folgenden Tipps helfen dir, achtsamer zu scrollen, dich weniger zu vergleichen – und dich selbst nicht zu verlieren.
+    </div>
 
     <details class="tipps-block">
       <summary>📱 Bewusster Umgang mit Bildschirmzeit</summary>
@@ -72,24 +175,24 @@
       </div>
     </details>
 
-    <section class="subpage-section">
+    <div class="mini-test-box">
       <h2>Und jetzt du!</h2>
       <p>Teste dich selbst: Wie viele dieser Tipps hast du schon umgesetzt?</p>
 
       <form id="progress-form">
-        <label><input type="checkbox" class="progress-checkbox" /> Ich habe meine Bildschirmzeit überprüft.</label><br />
-        <label><input type="checkbox" class="progress-checkbox" /> Ich bin 3 Profilen entfolgt, die mir nicht guttun.</label><br />
+        <label><input type="checkbox" class="progress-checkbox" /> Ich habe meine Bildschirmzeit überprüft.</label>
+        <label><input type="checkbox" class="progress-checkbox" /> Ich bin 3 Profilen entfolgt, die mir nicht guttun.</label>
         <label><input type="checkbox" class="progress-checkbox" /> Ich habe 24h ohne Social Media geschafft.</label>
       </form>
 
-      <div id="progress-output" style="margin-top: 15px; font-weight: bold;">
+      <div id="progress-output">
         Du hast 0 von 3 Aufgaben geschafft.
       </div>
 
-      <div id="reward-message" style="margin-top: 10px; font-weight: bold; color: var(--peach); display: none;">
+      <div id="reward-message">
         🥳 Super gemacht! Du hast alle Tipps umgesetzt. Mach weiter so!
       </div>
-    </section>
+    </div>
 
     <a href="social-media-netzwerke.html" class="back-link">Zurück zur Übersicht</a>
   </main>
@@ -99,6 +202,18 @@
   </footer>
 
   <script>
+    const typedText = document.getElementById("typed-text");
+    const text = "Praktische Tipps – Reflektierter Umgang";
+    let index = 0;
+    function type() {
+      if (index < text.length) {
+        typedText.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 80);
+      }
+    }
+    window.onload = type;
+
     const checkboxes = document.querySelectorAll('.progress-checkbox');
     const output = document.getElementById('progress-output');
     const reward = document.getElementById('reward-message');

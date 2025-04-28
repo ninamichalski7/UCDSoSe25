@@ -5,6 +5,122 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mentale Gesundheit & Selbstwert</title>
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    .page-heading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 50px 0 40px 0;
+    }
+
+    .search-bar {
+      background: #fff;
+      padding: 18px 32px;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      font-size: 2em;
+      display: flex;
+      align-items: center;
+      min-width: 320px;
+      max-width: 90%;
+    }
+
+    .search-icon {
+      margin-right: 12px;
+      color: #bbb;
+    }
+
+    .typed-text {
+      color: var(--peach);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .cursor {
+      font-weight: bold;
+      color: var(--peach);
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .hero-zitat {
+      background: linear-gradient(135deg, #da7d71, #c96a60);
+      padding: 40px 20px;
+      text-align: center;
+      font-style: italic;
+      font-size: 1.3em;
+      color: var(--white);
+      border-radius: 12px;
+      margin: 40px auto;
+      max-width: 900px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .vergleich-cards {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      margin: 60px 0;
+      flex-wrap: wrap;
+    }
+
+    .vergleich-cards .card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      width: 400px;
+      transition: all 0.3s ease-out;
+    }
+
+    .vergleich-cards .card:hover {
+      background: linear-gradient(135deg, var(--cream), var(--white));
+    }
+
+    .vergleich-cards .card h4 {
+      background-color: var(--peach);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 12px 12px 0 0;
+      margin: -30px -30px 20px -30px;
+      font-size: 1.2em;
+    }
+
+    .realitaetskarte {
+      background-color: var(--white);
+      border-left: 5px solid var(--peach);
+      padding: 24px;
+      margin: 60px auto;
+      max-width: 700px;
+      font-size: 1.1em;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.03);
+    }
+
+    .subpage-section {
+      background-color: var(--white);
+      padding: 40px 20px;
+      margin: 60px auto;
+      max-width: 800px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 60px auto 0 auto;
+      text-align: center;
+      text-decoration: none;
+      background: var(--peach);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -13,61 +129,65 @@
       <ul class="nav-right">
         <li><a href="../index.html">Startseite</a></li>
         <li><a href="../psychologie/psychologische-effekte.html">Psychologische Effekte</a></li>
-        
-        <!-- Hier wird das Dropdown-Menü eingefügt -->
         <li class="dropdown-click">
           <button class="dropdown-toggle">Social Media Netzwerke ▼</button>
           <ul class="dropdown-menu">
             <li><a href="einfluss-von-plattformen.html">Filter, Realität – und dazwischen du?</a></li>
-            <li><a href="mentale-gesundheit.html">Mentale Gesundheit &amp; Selbstwert</a></li>
+            <li><a href="mentale-gesundheit.html">Mentale Gesundheit & Selbstwert</a></li>
             <li><a href="reflektierter-umgang.html">Tipps für den Umgang mit Social Media</a></li>
           </ul>
         </li>
-
         <li><a href="../fakenews/fake-news-netze.html">Fake News Netze</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="tipps-interaktiv">
-    <h1>Mentale Gesundheit & Selbstwert</h1>
-    <p>Social Media beeinflusst, wie wir uns selbst wahrnehmen – oft ohne dass wir es merken. Hier findest du Infos, Hintergründe und Impulse zum Nachdenken.</p>
-
-    <details class="tipps-block">
-      <summary>🧠 Warum Social Media unseren Selbstwert beeinflusst</summary>
-      <div>
-        <p>Auf Social Media sehen wir ständig perfekte Körper, schöne Orte und scheinbar mühelose Karrieren. Das kann das Gefühl verstärken, selbst nicht gut genug zu sein – besonders bei Jugendlichen, die sich noch selbst finden.</p>
-        <p>Studien zeigen, dass häufige Vergleiche mit anderen auf Social Media das Selbstwertgefühl senken und zu Unzufriedenheit führen können.</p>
-        <p><strong>Reflexionsfrage:</strong> Hast du dich heute schon mit jemandem verglichen? Warum?</p>
+    <div class="page-heading">
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <span class="typed-text" id="typed-text"></span>
+        <span class="cursor">|</span>
       </div>
-    </details>
+    </div>
 
-    <details class="tipps-block">
-      <summary>😴 Wie Social Media unsere mentale Gesundheit beeinflussen kann</summary>
-      <div>
-        <p>Langes Scrollen, besonders am Abend, kann zu Schlafstörungen führen. Auch ständiger Informationsfluss, Likes und Kommentare sorgen für Druck und Überreizung.</p>
-        <ul>
-          <li>Schlechterer Schlaf</li>
-          <li>Stimmungsschwankungen</li>
-          <li>Geringere Konzentration</li>
-          <li>Höheres Stresslevel</li>
-        </ul>
-        <p><strong>Denkanstoß:</strong> Was passiert mit deinem Kopf, wenn du mal 2 Stunden ohne Handy bist?</p>
-      </div>
-    </details>
+    <div class="hero-zitat">
+      „Mentale Gesundheit ist wichtiger als Likes.“<br />
+      <span>– Realität</span>
+    </div>
 
-    <details class="tipps-block">
-      <summary>💬 Was du für dich tun kannst</summary>
-      <div>
-        <p>Dein Selbstwert hängt nicht von Followern oder Filtern ab. Je bewusster du dich mit dir selbst beschäftigst, desto weniger Macht haben äußere Vergleiche.</p>
-        <ul>
-          <li>Mach Social-Media-freie Zeiten zu einer Gewohnheit</li>
-          <li>Folge Menschen, die echte Einblicke geben</li>
-          <li>Sprich über deine Gefühle – mit echten Menschen</li>
-          <li>Erinnere dich an Dinge, die du gut kannst</li>
-        </ul>
+    <section class="vergleich-cards">
+      <div class="card">
+        <h4>🧠 Warum Social Media unseren Selbstwert beeinflusst</h4>
+        <div>
+          <p>Auf Social Media sehen wir ständig perfekte Körper, schöne Orte und scheinbar mühelose Karrieren. Das kann das Gefühl verstärken, selbst nicht gut genug zu sein – besonders bei Jugendlichen.</p>
+          <p><strong>Reflexionsfrage:</strong> Hast du dich heute schon mit jemandem verglichen? Warum?</p>
+        </div>
       </div>
-    </details>
+
+      <div class="card">
+        <h4>😴 Wie Social Media unsere mentale Gesundheit beeinflussen kann</h4>
+        <div>
+          <ul>
+            <li>Schlechterer Schlaf</li>
+            <li>Stimmungsschwankungen</li>
+            <li>Geringere Konzentration</li>
+            <li>Höheres Stresslevel</li>
+          </ul>
+          <p><strong>Denkanstoß:</strong> Was passiert mit deinem Kopf, wenn du mal 2 Stunden ohne Handy bist?</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="realitaetskarte">
+      <h3>💬 Was du für dich tun kannst</h3>
+      <ul>
+        <li>Mach Social-Media-freie Zeiten zu einer Gewohnheit</li>
+        <li>Folge Menschen, die echte Einblicke geben</li>
+        <li>Sprich über deine Gefühle – mit echten Menschen</li>
+        <li>Erinnere dich an Dinge, die du gut kannst</li>
+      </ul>
+    </div>
 
     <section class="subpage-section">
       <h2>Mini-Test: Wie geht's dir mit Social Media?</h2>
@@ -90,6 +210,18 @@
   </footer>
 
   <script>
+    const typedText = document.getElementById("typed-text");
+    const text = "Mentale Gesundheit & Selbstwert";
+    let index = 0;
+    function type() {
+      if (index < text.length) {
+        typedText.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 80);
+      }
+    }
+    window.onload = type;
+
     const miniChecks = document.querySelectorAll('.mini-check');
     const miniResult = document.getElementById('mini-result');
 
@@ -109,6 +241,4 @@
   </script>
 </body>
 </html>
-
-
 
