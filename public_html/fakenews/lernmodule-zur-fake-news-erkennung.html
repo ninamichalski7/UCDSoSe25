@@ -4,6 +4,137 @@
 <meta charset="UTF-8">
 <title>Lernmodule zur Fake-News-Erkennung</title>
 	<link rel="stylesheet" href="../style.css" />
+	<style>
+    .page-heading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 50px 0 40px 0;
+    }
+
+    .search-bar {
+      background: #fff;
+      padding: 18px 32px;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      font-size: 2em;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      min-width: 320px;
+      max-width: 90%;
+    }
+
+    .search-icon {
+      margin-right: 12px;
+      color: #bbb;
+    }
+
+    .typed-text {
+      color: var(--peach);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .cursor {
+      font-weight: bold;
+      color: var(--peach);
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .hero-zitat {
+      background: linear-gradient(135deg, #da7d71, #c96a60);
+      padding: 40px 20px;
+      text-align: center;
+      font-style: italic;
+      font-size: 1.3em;
+      color: var(--white);
+      border-radius: 12px;
+      margin: 40px auto;
+      max-width: 900px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      animation: fadeInQuote 1s ease-in-out;
+    }
+
+    .vergleich-cards {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      margin: 60px 0;
+    }
+
+    .vergleich-cards .card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      width: 400px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+      cursor: pointer;
+    }
+
+    .vergleich-cards .card.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .vergleich-cards .card:hover {
+      background: linear-gradient(135deg, var(--cream), var(--white));
+    }
+
+    .vergleich-cards .card h4 {
+      background-color: var(--peach);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 12px 12px 0 0;
+      margin: -30px -30px 20px -30px;
+      font-size: 1.2em;
+    }
+
+    .asym-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 80px auto;
+    }
+
+    .asym-grid .box {
+      background-color: var(--white);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    .asym-grid .box h3 {
+      margin-top: 0;
+    }
+
+    .realitaetskarte {
+      background-color: var(--white);
+      border-left: 5px solid var(--peach);
+      padding: 24px;
+      margin: 60px auto;
+      max-width: 700px;
+      font-size: 1.1em;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.03);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 60px auto 0 auto;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
@@ -28,7 +159,57 @@
     </nav>
   </header>
 	
-	<main>
+	<main class="tipps-interaktiv">
+    <div class="page-heading">
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <span class="typed-text" id="typed-text">Fake oder echt? - Täuscht uns die Wahrheit?</span>
+        <span class="cursor">|</span>
+      </div>
+    </div>
+
+    <div class="hero-zitat">
+      „Quellen sind nicht immer vertrauenswürdig - das eigene Empfinden schon.“<br />
+      <span>– Realität</span>
+    </div>
+		
+		<script>
+    const typedText = document.getElementById("typed-text");
+    const text = "Filter, Realität – und dazwischen du?";
+    let index = 0;
+    function type() {
+      if (index < text.length) {
+        typedText.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 80);
+      }
+    }
+    window.onload = type;
+
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+
+    document.getElementById('scroll-to-ki').addEventListener('click', () => {
+      document.getElementById('ki-section').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('scroll-to-reality').addEventListener('click', () => {
+      document.getElementById('reality-reminder').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+		
 	   <h2>Wie erkennt man Fake News?</h2>
     <ul>
       <li>Überprüfe die Quelle</li>
@@ -36,6 +217,7 @@
       <li>Achte auf reißerische Sprache</li>
       <li>Vermeide das schnelle Weiterleiten ungeprüfter Infos</li>
     </ul>
+		
 	</main>
 </body>
 </html>
