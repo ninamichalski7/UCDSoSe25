@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Social Media Netzwerke</title>
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    .image-layout {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .hero-image img {
+      max-width: 400px;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -31,7 +45,7 @@
 
   <main>
     <section class="hero-section">
-      <div class="hero-container">
+      <div class="hero-container image-layout">
         <div class="hero-text">
           <p class="hero-label">Hey, du!</p>
           <h1>Es ist Zeit, mit dem ständigen Vergleich aufzuhören...</h1>
@@ -44,6 +58,10 @@
             und gibt dir konkrete Werkzeuge für einen gesunden, reflektierten Umgang an die Hand.
           </p>
           <a href="#unterthemen" class="button">Mehr erfahren →</a>
+        </div>
+
+        <div class="hero-image">
+          <img src="../bilder/MädchenSocialMedia.png" alt="Mädchen blickt nachdenklich aufs Handy" />
         </div>
       </div>
     </section>
@@ -72,6 +90,3 @@
   </footer>
 </body>
 </html>
-
-
-

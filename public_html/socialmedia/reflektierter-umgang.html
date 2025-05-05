@@ -6,101 +6,20 @@
   <title>Praktische Tipps – Reflektierter Umgang</title>
   <link rel="stylesheet" href="../style.css" />
   <style>
-    .page-heading {
+    .image-layout {
       display: flex;
-      justify-content: center;
+      gap: 40px;
       align-items: center;
-      margin: 50px 0 20px 0;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
 
-    .search-bar {
-      background: #fff;
-      padding: 18px 32px;
-      border-radius: 30px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-      font-size: 2em;
-      display: flex;
-      align-items: center;
-      min-width: 320px;
-      max-width: 90%;
-    }
-
-    .search-icon {
-      margin-right: 12px;
-      color: #bbb;
-    }
-
-    .typed-text {
-      color: var(--peach);
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .cursor {
-      font-weight: bold;
-      color: var(--peach);
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-
-    .intro-text {
-      text-align: center;
-      color: #333;
-      font-size: 1.1em;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 20px auto 50px auto;
-    }
-
-    .mini-test-box {
-      background: var(--cream);
-      padding: 30px;
-      border-radius: 16px;
-      max-width: 700px;
-      margin: 40px auto;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-
-    .mini-test-box h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    #mini-test label {
-      display: block;
-      margin-bottom: 15px;
-      font-size: 1.1em;
-    }
-
-    #progress-output {
-      margin-top: 15px;
-      font-weight: bold;
-    }
-
-    #reward-message {
-      margin-top: 15px;
-      font-weight: bold;
-      color: var(--peach);
-      display: none;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin: 50px auto 0 auto;
-      text-align: center;
-      background: var(--peach);
-      color: white;
-      padding: 12px 24px;
-      border-radius: 30px;
-      text-decoration: none;
+    .hero-image img {
+      max-width: 400px;
+      width: 100%;
     }
   </style>
 </head>
-
 <body>
   <header>
     <nav class="main-nav">
@@ -121,80 +40,97 @@
     </nav>
   </header>
 
-  <main class="tipps-interaktiv">
-    <div class="page-heading">
-      <div class="search-bar">
-        <span class="search-icon">🔍</span>
-        <span class="typed-text" id="typed-text"></span>
-        <span class="cursor">|</span>
-      </div>
+  <main>
+    <section class="hero-section">
+  <div class="page-heading" style="display: flex; justify-content: center; align-items: center; margin: 40px 0 10px 0;">
+    <div class="search-bar" style="background: white; padding: 18px 32px; border-radius: 30px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06); font-size: 2em; display: flex; align-items: center; min-width: 320px; max-width: 100%;">
+      <span class="search-icon" style="margin-right: 12px; color: #bbb;">🔍</span>
+      <span class="typed-text" id="typed-text" style="color: var(--peach); font-weight: 600; white-space: nowrap;">&nbsp;Praktische Tipps zum bewussten Umgang</span>
+      <span class="cursor" style="font-weight: bold; color: var(--peach); animation: blink 1s infinite;">&nbsp;</span>
     </div>
+  </div>
+      <div class="hero-container image-layout">
+        <div class="hero-text">
+          <h2 class="hero-label" style="font-size: 2em; font-weight: bold; margin-bottom: 10px;">Hey, du!</h2>
+<p class="hero-desc">
+        Social Media beeinflusst, wie wir uns selbst und andere sehen. 
+        Umso wichtiger ist ein bewusster Umgang. 
+        Die folgenden Tipps helfen dir, achtsamer zu scrollen, dich weniger zu vergleichen – und dich selbst nicht zu verlieren.
+      </p>
+          <a href="#tipps" class="button">Mehr erfahren →</a>
+        </div>
 
-    <div class="intro-text">
-      Social Media beeinflusst, wie wir uns selbst und andere sehen.  
-      Umso wichtiger ist ein bewusster Umgang.  
-      Die folgenden Tipps helfen dir, achtsamer zu scrollen, dich weniger zu vergleichen – und dich selbst nicht zu verlieren.
-    </div>
-
-    <details class="tipps-block">
-      <summary>📱 Bewusster Umgang mit Bildschirmzeit</summary>
-      <div>
-        <p>Stundenlanges Scrollen passiert schneller, als man denkt. Wer die Zeit nicht reflektiert, verliert schnell das Gefühl für die eigene Mediennutzung.</p>
-        <ul>
-          <li>Nutze die Bildschirmzeit-Funktion deines Smartphones, um deine Nutzung zu beobachten.</li>
-          <li>Lege feste Social-Media-Zeiten fest – z. B. 15 Minuten nach dem Mittagessen.</li>
-          <li>Frage dich beim Öffnen der App: „Warum öffne ich sie jetzt?“</li>
-        </ul>
-        <p><strong>Reflexionsfrage:</strong> Wann fühlst du dich nach Social Media besser – und wann schlechter?</p>
+        <div class="hero-image">
+          <img src="../bilder/MädchenListe.png" alt="Mädchen mit Liste" />
+        </div>
       </div>
-    </details>
+    </section>
 
-    <details class="tipps-block">
-      <summary>🔍 Vergleichsverhalten erkennen & stoppen</summary>
-      <div>
-        <p>Social Media zeigt Highlights, nicht den Alltag. Trotzdem vergleichen wir uns oft – und fühlen uns dadurch kleiner.</p>
-        <ul>
-          <li>Folge Accounts, die dich inspirieren – nicht unter Druck setzen.</li>
-          <li>Entfolge bewusst Profilen, bei denen du dich schlechter fühlst.</li>
-          <li>Erinnere dich: Was du siehst, ist oft bearbeitet und inszeniert.</li>
-        </ul>
-        <p><strong>Übung:</strong> Notiere drei Dinge, die du an dir selbst magst – unabhängig von Likes.</p>
+    <section id="tipps" class="tipps-interaktiv">
+      <details class="tipps-block">
+        <summary>📱 Bewusster Umgang mit Bildschirmzeit</summary>
+        <div>
+          <p>Stundenlanges Scrollen passiert schneller, als man denkt. Wer die Zeit nicht reflektiert, verliert schnell das Gefühl für die eigene Mediennutzung.</p>
+          <ul>
+            <li>Nutze die Bildschirmzeit-Funktion deines Smartphones, um deine Nutzung zu beobachten.</li>
+            <li>Lege feste Social-Media-Zeiten fest – z. B. 15 Minuten nach dem Mittagessen.</li>
+            <li>Frage dich beim Öffnen der App: „Warum öffne ich sie jetzt?“</li>
+          </ul>
+          <p><strong>Reflexionsfrage:</strong> Wann fühlst du dich nach Social Media besser – und wann schlechter?</p>
+        </div>
+      </details>
+
+      <details class="tipps-block">
+        <summary>🔍 Vergleichsverhalten erkennen & stoppen</summary>
+        <div>
+          <p>Social Media zeigt Highlights, nicht den Alltag. Trotzdem vergleichen wir uns oft – und fühlen uns dadurch kleiner.</p>
+          <ul>
+            <li>Folge Accounts, die dich inspirieren – nicht unter Druck setzen.</li>
+            <li>Entfolge bewusst Profilen, bei denen du dich schlechter fühlst.</li>
+            <li>Erinnere dich: Was du siehst, ist oft bearbeitet und inszeniert.</li>
+          </ul>
+          <p><strong>Übung:</strong> Notiere drei Dinge, die du an dir selbst magst – unabhängig von Likes.</p>
+        </div>
+      </details>
+
+      <details class="tipps-block">
+        <summary>🧘 Digitale Pausen & Selbstfürsorge</summary>
+        <div>
+          <p>Mentale Gesundheit beginnt offline. Digitale Reizüberflutung führt zu Stress, Schlafproblemen und Konzentrationsmangel.</p>
+          <ul>
+            <li>Lege Social-Media-freie Zeiten fest – z. B. ab 21 Uhr oder beim Frühstück.</li>
+            <li>Verwende „Nicht stören“-Modus oder entferne die App zeitweise vom Homescreen.</li>
+            <li>Fülle die Pausen aktiv: mit Musik, Bewegung oder analogem Austausch.</li>
+          </ul>
+          <p><strong>Mini-Challenge:</strong> 24 Stunden ohne Instagram – wie geht’s dir danach?</p>
+        </div>
+      </details>
+
+      <div class="mini-test-box" style="background: var(--cream); padding: 30px; border-radius: 16px; max-width: 700px; margin: 60px auto; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <h2 style="text-align: center; margin-bottom: 20px;">Und jetzt du!</h2>
+        <p style="text-align: center;">Teste dich selbst: Wie viele dieser Tipps hast du schon umgesetzt?</p>
+
+        <form id="progress-form" style="margin-top: 30px;">
+          <div style="margin-bottom: 20px; padding: 15px 20px; border-radius: 12px; background: white; border-left: 5px solid var(--peach);">
+            <label><input type="checkbox" class="progress-checkbox" /> Ich habe meine Bildschirmzeit überprüft.</label>
+          </div>
+          <div style="margin-bottom: 20px; padding: 15px 20px; border-radius: 12px; background: white; border-left: 5px solid var(--peach);">
+            <label><input type="checkbox" class="progress-checkbox" /> Ich bin 3 Profilen entfolgt, die mir nicht guttun.</label>
+          </div>
+          <div style="margin-bottom: 20px; padding: 15px 20px; border-radius: 12px; background: white; border-left: 5px solid var(--peach);">
+            <label><input type="checkbox" class="progress-checkbox" /> Ich habe 24h ohne Social Media geschafft.</label>
+          </div>
+        </form>
+
+        <div id="progress-output" style="margin-top: 20px; text-align: center; font-weight: bold;"></div>
+
+        <div id="reward-message" style="margin-top: 20px; background-color: var(--lightgreen); padding: 20px; border-radius: 12px; text-align: center; display: none;">
+          🥳 Super gemacht! Du hast alle Tipps umgesetzt. Mach weiter so!
+        </div>
       </div>
-    </details>
 
-    <details class="tipps-block">
-      <summary>🧘 Digitale Pausen & Selbstfürsorge</summary>
-      <div>
-        <p>Mentale Gesundheit beginnt offline. Digitale Reizüberflutung führt zu Stress, Schlafproblemen und Konzentrationsmangel.</p>
-        <ul>
-          <li>Lege Social-Media-freie Zeiten fest – z. B. ab 21 Uhr oder beim Frühstück.</li>
-          <li>Verwende „Nicht stören“-Modus oder entferne die App zeitweise vom Homescreen.</li>
-          <li>Fülle die Pausen aktiv: mit Musik, Bewegung oder analogem Austausch.</li>
-        </ul>
-        <p><strong>Mini-Challenge:</strong> 24 Stunden ohne Instagram – wie geht’s dir danach?</p>
-      </div>
-    </details>
-
-    <div class="mini-test-box">
-      <h2>Und jetzt du!</h2>
-      <p>Teste dich selbst: Wie viele dieser Tipps hast du schon umgesetzt?</p>
-
-      <form id="progress-form">
-        <label><input type="checkbox" class="progress-checkbox" /> Ich habe meine Bildschirmzeit überprüft.</label>
-        <label><input type="checkbox" class="progress-checkbox" /> Ich bin 3 Profilen entfolgt, die mir nicht guttun.</label>
-        <label><input type="checkbox" class="progress-checkbox" /> Ich habe 24h ohne Social Media geschafft.</label>
-      </form>
-
-      <div id="progress-output">
-        Du hast 0 von 3 Aufgaben geschafft.
-      </div>
-
-      <div id="reward-message">
-        🥳 Super gemacht! Du hast alle Tipps umgesetzt. Mach weiter so!
-      </div>
-    </div>
-
-    <a href="social-media-netzwerke.html" class="back-link">Zurück zur Übersicht</a>
+      <a href="social-media-netzwerke.html" class="back-link">Zurück zur Übersicht</a>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -202,18 +138,6 @@
   </footer>
 
   <script>
-    const typedText = document.getElementById("typed-text");
-    const text = "Praktische Tipps – Reflektierter Umgang";
-    let index = 0;
-    function type() {
-      if (index < text.length) {
-        typedText.textContent += text.charAt(index);
-        index++;
-        setTimeout(type, 80);
-      }
-    }
-    window.onload = type;
-
     const checkboxes = document.querySelectorAll('.progress-checkbox');
     const output = document.getElementById('progress-output');
     const reward = document.getElementById('reward-message');
@@ -225,6 +149,18 @@
     }
 
     checkboxes.forEach(cb => cb.addEventListener('change', updateProgress));
+
+    const typedText = document.getElementById("typed-text");
+    const text = "Praktische Tipps – Reflektierter Umgang";
+    let index = 0;
+    function type() {
+      if (index < text.length) {
+        typedText.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 80);
+      }
+    }
+    window.onload = type;
   </script>
 </body>
 </html>
