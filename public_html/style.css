@@ -258,6 +258,7 @@ header {
 .hero-container {
   background-color: var(--white);
   border-radius: 16px;
+  display: flex;
   box-shadow: 0 0 15px rgba(0,0,0,0.05);
   padding: 40px;
   max-width: 1000px;
