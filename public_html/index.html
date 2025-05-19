@@ -14,7 +14,7 @@
         <li><a href="index.html">Startseite</a></li>
       
 		  <li class="dropdown-click">
-          <button class="dropdown-toggle">Psychologische Effekte ▼</button>
+          <a href="psychologie/psychologische-effekte.html" class="dropdown-toggle">Psychologische Effekte ▼</a>
           <ul class="dropdown-menu">
             <li><a href="psychologie/suchtverhalten-und-abhaengigkeit.html">Suchtverhalten und Abhängigkeit</a></li>
             <li><a href="psychologie/emotionale-auswirkungen.html">Emotionale Auswirkungen</a></li>
@@ -23,7 +23,7 @@
         </li>
 		  
         <li class="dropdown-click">
-          <button class="dropdown-toggle">Social Media Netzwerke ▼</button>
+          <a href="socialmedia/social-media-netzwerke.html" class="dropdown-toggle">Social Media Netzwerke ▼</a>
           <ul class="dropdown-menu">
             <li><a href="socialmedia/einfluss-von-plattformen.html">Filter, Realität – und dazwischen du?</a></li>
             <li><a href="socialmedia/mentale-gesundheit.html">Mentale Gesundheit &amp; Selbstwert</a></li>
@@ -32,7 +32,7 @@
         </li>
          
 		    <li class="dropdown-click">
-          <button class="dropdown-toggle">Fake-News-Netze ▼</button>
+          <a href="fakenews/fake-news-netze.html" class="dropdown-toggle">Fake-News-Netze ▼</a>
           <ul class="dropdown-menu">
             <li><a href="fakenews/lernmodule-zur-fake-news-erkennung.html">Lernmodule zur Fake-News-Erkennung</a></li>
             <li><a href="fakenews/social-bots.html">Social Bots</a></li>
@@ -44,33 +44,133 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Willkommen bei "The Social Effect"</h1>
-      <p>Eine Plattform, die Wirkungen Sozialer Netzwerke beleuchtet.</p>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1 id="hero-title">Willkommen bei "The Social Effect"</h1>
+        <p id="hero-text-content">Eine Plattform, die Wirkungen Sozialer Netzwerke beleuchtet.</p>
+        <a href="#" id="hero-action-link" class="button">Mehr erfahren</a>
+      </div>
+    </section>
 
-  <section class="topics">
-    <div class="topic-box">
-      <h2>Psychologische Effekte</h2>
-      <p>Wieso ist uns soziale Vernetzung so wichtig? Was steckt eigentlich dahinter?</p>
-      <a href="psychologie/psychologische-effekte.html">Mehr erfahren</a>
-    </div>
-    <div class="topic-box">
-      <h2>Social Media Netzwerke</h2>
-      <p>Wer kennt sie nicht – Filter und Ideale, die uns durch Social Media noch mehr Druck machen.</p>
-      <a href="socialmedia/social-media-netzwerke.html">Mehr erfahren</a>
-    </div>
-    <div class="topic-box">
-      <h2>Fake News Netze</h2>
-      <p>Fake News verbreiten sich oft schnell. Wieso gehen sie viral und wie erkennt man sie?</p>
-      <a href="fakenews/fake-news-netze.html">Mehr erfahren</a>
-    </div>
-  </section>
-	 <footer class="site-footer">
-	 <a href="impressum.html">Impressum</a>
+    <section class="carousel-container">
+      <button id="carousel-button-prev" class="carousel-button">&lt;</button>
+      <div class="topic-image-gallery">
+        <div class="topic-image-card" 
+             data-title="Psychologische Effekte" 
+             data-text="Wieso ist uns soziale Vernetzung so wichtig? Was steckt eigentlich dahinter?" 
+             data-link="psychologie/psychologische-effekte.html">
+          <img src="bilder/PsychologieStartseite.svg" alt="Psychologische Effekte">
+        </div>
+        <div class="topic-image-card" 
+             data-title="Social Media Netzwerke" 
+             data-text="Wer kennt sie nicht – Filter und Ideale, die uns durch Social Media noch mehr Druck machen." 
+             data-link="socialmedia/social-media-netzwerke.html">
+          <img src="bilder/SocialMediaStartseite.svg" alt="Social Media Netzwerke">
+        </div>
+        <div class="topic-image-card" 
+             data-title="Fake News Netze" 
+             data-text="Fake News verbreiten sich oft schnell. Wieso gehen sie viral und wie erkennt man sie?" 
+             data-link="fakenews/fake-news-netze.html">
+          <img src="bilder/FakeNewsStartseite.svg" alt="Fake News Netze">
+        </div>
+      </div>
+      <button id="carousel-button-next" class="carousel-button">&gt;</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="impressum.html">Impressum</a>
     <p>&copy; 2025 The Social Effect</p>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const heroTitle = document.getElementById('hero-title');
+      const heroTextContent = document.getElementById('hero-text-content');
+      const heroActionLink = document.getElementById('hero-action-link');
+      // const originalHeroTitle = heroTitle.textContent; // No longer strictly needed for reset this way
+      // const originalHeroText = heroTextContent.textContent;
+
+      const imageCards = document.querySelectorAll('.topic-image-card');
+
+      // Initially hide the hero action link if it has no href (or specific initial state)
+      // This will be managed by updateHeroWithCenteredCard now or by direct click
+      // if (!heroActionLink.getAttribute('href') || heroActionLink.getAttribute('href') === '#') {
+      //   heroActionLink.style.opacity = '0';
+      //   heroActionLink.style.pointerEvents = 'none'; 
+      // }
+
+      // Function to update hero based on a specific card's data
+      const updateHeroDisplay = (cardData) => {
+        heroTitle.classList.add('fade-out-content');
+        heroTextContent.classList.add('fade-out-content');
+        heroActionLink.classList.add('fade-out-content');
+        heroActionLink.style.pointerEvents = 'none';
+
+        setTimeout(() => {
+          heroTitle.textContent = cardData.title;
+          heroTextContent.textContent = cardData.text;
+          heroActionLink.href = cardData.link;
+          heroActionLink.className = 'button'; // Ensure styles are applied
+          
+          heroTitle.classList.remove('fade-out-content');
+          heroTextContent.classList.remove('fade-out-content');
+          heroActionLink.classList.remove('fade-out-content');
+          heroActionLink.style.opacity = '1';
+          heroActionLink.style.pointerEvents = 'auto';
+        }, 250); // Animation timing
+      };
+
+      // Direct click on a card updates hero
+      imageCards.forEach(card => {
+        card.addEventListener('click', () => {
+          updateHeroDisplay(card.dataset);
+        });
+      });
+
+      // Carousel Logic
+      const gallery = document.querySelector('.topic-image-gallery');
+      const prevButton = document.getElementById('carousel-button-prev');
+      const nextButton = document.getElementById('carousel-button-next');
+
+      const updateHeroWithCenteredCard = () => {
+        if (gallery.children.length >= 3) {
+          const centeredCard = gallery.children[1]; // The middle card
+          if (centeredCard && centeredCard.dataset.title) {
+            updateHeroDisplay(centeredCard.dataset);
+          }
+        } else if (gallery.children.length > 0) {
+          // Fallback for fewer than 3 cards (e.g. load first)
+          const firstCard = gallery.children[0];
+           if (firstCard && firstCard.dataset.title) {
+            updateHeroDisplay(firstCard.dataset);
+          }
+        }
+      };
+
+      if (gallery && prevButton && nextButton) {
+        nextButton.addEventListener('click', () => {
+          const firstCard = gallery.querySelector('.topic-image-card:first-child');
+          if (firstCard) {
+            gallery.appendChild(firstCard); 
+            updateHeroWithCenteredCard(); 
+          }
+        });
+
+        prevButton.addEventListener('click', () => {
+          const lastCard = gallery.querySelector('.topic-image-card:last-child');
+          if (lastCard) {
+            gallery.insertBefore(lastCard, gallery.firstChild); 
+            updateHeroWithCenteredCard(); 
+          }
+        });
+        
+        // Initial hero update based on the centered card
+        updateHeroWithCenteredCard(); 
+      }
+
+    });
+  </script>
 </body>
 </html>

@@ -1,26 +1,31 @@
 :root {
-  --green: #3e8440;
-  --peach: #efaca5;
-  --lightgreen: #badd7f;
-  --cream: #f7efda;
-  --white: #fff;
-  --dark: #222;
+  --color-primary: #dd8a6f;
+  --color-accent: #bb4c23;
+  --color-secondary: #394a5a;
+  --color-background-main: #c5cdd4;
+  --color-background-secondary: #f5c1b6;
+  --color-light: #fff;
+  --color-dark: #222;
 }
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: var(--cream);
-  color: var(--dark);
+  background-color: var(--color-background-main);
+  color: var(--color-dark);
+  line-height: 1.6;
 }
 
-h1, h2 {
-  color: var(--green);
+h1, h2, h3 {
+  color: var(--color-primary); /* Default heading color */
 }
 
 header {
-  background-color: var(--green);
+  background-color: var(--color-primary);
   padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure header stays on top */
 }
 
 .main-nav {
@@ -30,14 +35,14 @@ header {
   max-width: 1200px;
   margin: auto;
   padding: 0 20px;
-  color: var(--white);
+  color: var(--color-light);
   flex-wrap: wrap;
 }
 
 .logo {
   font-size: 1.5em;
   font-weight: bold;
-  color: white;
+  color: var(--color-light);
 }
 
 .nav-right {
@@ -49,7 +54,7 @@ header {
 }
 
 .nav-right li a {
-  color: white;
+  color: var(--color-light);
   text-decoration: none;
   font-weight: bold;
 }
@@ -58,366 +63,193 @@ header {
   text-decoration: underline;
 }
 
-/* Hero nur auf Startseite – andere Seiten haben meist keinen hero */
+/* New Hero Section Styles */
 .hero {
-  position: relative;
-  width: 100%;
-  min-height: 60vh;
-  background-image: url("bilder/The Social Effekt.png");
-  background-size: cover;             /* Skaliert das Bild proportional */
-  background-position: center center; /* Zentriert das Bild */
-  background-repeat: no-repeat;       /* Verhindert Wiederholung */
-  background-attachment: scroll;      /* Optional: Bild bewegt sich beim Scrollen */
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 5%;
-}
-
-
-.hero-text {
-  background-color: rgba(247, 239, 218, 0.9);
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 400px;
-}
-
-.hero-text h1 {
-  margin: 0 0 10px 0;
-  font-size: 2em;
-}
-
-.hero-text p {
-  font-size: 1.1em;
-}
-
-/* Inhalt für alle Seiten */
-.topics {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 40px 20px;
-}
-
-.topic-box {
-  background-color: var(--white);
-  padding: 20px;
-  width: 300px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-background-main); /* Fallback color */
+  background-image: url('bilder/Netzwerke.svg');
+  background-repeat: repeat-x;
+  background-size: auto 100%; /* Cover full height, tile horizontally */
+  padding: 60px 20px;
   text-align: center;
+  margin-bottom: 40px; /* Space before the image gallery */
+  animation: fadeInSlideUp 0.8s ease-out forwards, scrollBackground 30s linear infinite; /* Added scrollBackground animation */
+  position: relative; /* Ensure it is a positioning context for pseudo-elements if needed later */
+  overflow: hidden; /* Important for clipping if background elements were to exceed bounds */
 }
 
-.topic-box h2 {
-  margin-top: 0;
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative; /* Ensure content stays above the animated background */
+  z-index: 1; /* Ensure content is above background if it had its own z-index */
 }
 
-.topic-box a {
-  display: inline-block;
-  margin-top: 10px;
-  color: var(--green);
+#hero-title {
+  font-size: 2.8em; /* Larger title */
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+#hero-text-content {
+  font-size: 1.2em;
+  color: var(--color-dark);
+  margin-bottom: 30px;
+  min-height: 50px; /* Ensure space even if text is short */
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-out 0.1s, transform 0.5s ease-out 0.1s; /* Slight delay */
+}
+
+#hero-action-link.button {
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  padding: 12px 25px;
+  border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1em;
+  transition: background-color 0.3s ease, opacity 0.5s ease-out 0.2s, transform 0.5s ease-out 0.2s; /* Slight delay */
+  opacity: 1;
+  transform: translateY(0);
+  display: inline-block; /* Ensure it's visible for transition if it was none */
 }
 
-.container {
-      max-width: 800px;
-      margin: 0 auto;
-      background-color: #fff;
-      padding: 2rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-.site-footer a {
-  color: white;
-  text-decoration: none; /* entfernt Unterstreichung */
+#hero-action-link.button:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
 }
 
-.site-footer a:hover {
-  text-decoration: underline; /* fügt beim Hover eine Unterstreichung hinzu */
+/* Topic Image Gallery Styles */
+.topic-image-gallery {
+  display: flex;
+  gap: 30px;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
 }
 
-
-/* Optional: generischer Abschnittsstil für Unterseiten */
-.page-content {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
-  background-color: var(--white);
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  padding: 20px;
+.topic-image-card {
+  background-color: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 350px;
+  height: 350px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* Positionierung des Dropdowns */
+
+.topic-image-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.topic-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Styles für dropdowns*/
 .dropdown-click {
   position: relative;
+  padding-bottom: 5px; /* Add padding to create a hover bridge */
 }
 
-/* Button zum Öffnen des Dropdowns */
 .dropdown-toggle {
   background: none;
   border: none;
-  color: var(--white);
+  color: var(--color-light);
   font-weight: bold;
   font-size: 1em;
   cursor: pointer;
-}
-
-/* Positionierung des Dropdown-Containers */
-.dropdown-click {
-  position: relative;
-  padding-bottom: 10px; /* Verhindert Hover-Verlust beim Übergang zum Menü */
+  text-decoration: none;
   display: inline-block;
+  padding: 0;
 }
 
-/* Dropdown-Menü standardmäßig unsichtbar */
 .dropdown-menu {
-  display: none; /* Menü standardmäßig unsichtbar */
+  display: none;
   position: absolute;
-  top: 100%; /* Direkt unter dem Toggle-Element */
+  top: 100%;
   left: 0;
-  background-color: var(--lightgreen); /* Hintergrundfarbe des Menüs */
+  background-color: var(--color-background-secondary);
   min-width: 240px;
-  box-shadow: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   border-radius: 8px;
   z-index: 9999;
-  padding: 0;
+  padding: 5px 0;
   list-style: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0.3s ease-out;
+  visibility: hidden; /* Use visibility for accessibility and to prevent interaction when hidden */
 }
 
-/* Zeigt das Dropdown-Menü bei Hover an */
 .dropdown-click:hover .dropdown-menu {
-  display: block;
+  display: block; /* Keep display:block for layout calculation */
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
 }
 
-/* Links im Dropdown-Menü */
 .dropdown-menu li a {
   display: block;
-  padding: 12px 16px;
+  padding: 10px 15px; /* Adjusted padding */
   text-decoration: none;
-  color: var(--dark);
-  background-color: var(--lightgreen); /* Hintergrundfarbe für Links */
-  border-radius: 4px; /* Optional: Abgerundete Ecken */
+  color: var(--color-dark);
+  background-color: var(--color-background-secondary);
+  border-radius: 4px;
+  margin: 2px 5px; /* Spacing for items */
 }
 
-/* Hover-Effekt für Links im Menü */
 .dropdown-menu li a:hover {
-  background-color: var(--cream); /* Helleres Highlight beim Hover */
+  background-color: var(--color-accent);
 }
 
-/* Social-Media-Bereich */
-
-/* === Farbpalette === */
-:root {
-  --peach: #efaca5;
-  --lightgreen: #badd7f;
-  --cream: #f7efda;
-  --white: #ffffff;
-  --dark: #222222;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: var(--cream);
-  color: var(--dark);
-}
-
-h1, h2 {
-  color: var(--peach);
-}
-
-/* === Header & Navigation === */
-header {
-  background-color: var(--peach);
-  padding: 10px 0;
-}
-
-.main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
-  color: var(--white);
-  flex-wrap: wrap;
-}
-
-.nav-left,
-.nav-right {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-left li a,
-.nav-right li a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.logo a,
-.logo {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: var(--white);
-  text-decoration: none;
-  text-align: center;
-}
-
-/* === Hero-Bereich Startseite === */
-.hero-section {
-  background-color: var(--cream);
-  padding: 60px 20px;
-}
-
-.hero-container {
-  background-color: var(--white);
-  border-radius: 16px;
-  display: flex;
-  box-shadow: 0 0 15px rgba(0,0,0,0.05);
-  padding: 40px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.hero-text {
-  text-align: left;
-}
-
-.hero-label {
-  font-weight: bold;
-  color: var(--peach);
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-.hero-text h1 {
-  font-size: 2em;
-  margin: 10px 0;
-  color: var(--peach);
-}
-
-.hero-desc {
-  font-size: 1.1em;
-  line-height: 1.6;
-  margin-bottom: 25px;
-}
-
-.button {
-  background-color: var(--peach);
-  color: var(--white);
-  padding: 10px 20px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.button:hover {
-  background-color: var(--lightgreen);
-  color: var(--dark);
-}
-
-/* === Themenübersicht Startseite === */
-.themen-section {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 40px 20px;
-  background-color: var(--white);
-}
-
-.thema-box {
-  background-color: var(--cream);
-  border-radius: 16px;
-  padding: 20px;
-  width: 300px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-
-.thema-box:hover {
-  transform: scale(1.03);
-}
-
-.thema-box h2 {
-  margin-top: 0;
-  color: var(--peach);
-}
-
-.thema-box p {
-  margin-bottom: 15px;
-}
-
-.thema-box a {
-  color: var(--dark);
-  font-weight: bold;
-  text-decoration: none;
-}
-
-/* === Unterseitenbereich === */
-.subpage-section {
-  background-color: var(--white);
-  padding: 60px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 900px;
-  margin: auto;
-  border-radius: 16px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-}
-
-.subpage-section h1,
-.subpage-section h2 {
-  color: var(--peach);
-  margin-bottom: 20px;
-}
-
-.subpage-section p {
-  line-height: 1.6;
-  margin-bottom: 20px;
-  text-align: justify;
-}
-
-.back-link {
-  display: inline-block;
-  margin-top: 20px;
-  color: var(--dark);
-  text-decoration: none;
-  font-weight: bold;
-  background-color: var(--peach);
-  padding: 10px 20px;
-  border-radius: 25px;
-  color: var(--white);
-}
-
-.back-link:hover {
-  background-color: var(--lightgreen);
-  color: var(--dark);
-}
-
-/* === Footer === */
+/* Footer Styles */
 .site-footer {
-  background-color: var(--peach);
-  color: var(--white);
+  background-color: var(--color-primary); /* Changed to main green for consistency */
+  color: var(--color-light);
   text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
+  padding: 30px 20px; /* Increased padding */
+  margin-top: 60px; /* More space before footer */
 }
 
-/* === Aktive Navigation === */
-.active {
+.site-footer a {
+  color: var(--color-light);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
   text-decoration: underline;
 }
 
-/* === Interaktive Tipps-Boxen === */
+.page-content { /* This was a generic style, likely still useful */
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px; /* Added padding */
+  background-color: var(--color-light);
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+/* Keep .container if used on other pages, or if the new hero/gallery should be wrapped */
+.container {
+      max-width: 800px; /* This might be too small for the new gallery */
+      margin: 0 auto;
+      background-color: var(--color-light); /* was #fff */
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* === Aktive Navigation === (peach theme) */
+.active { /* This is a generic helper, keep it */
+  text-decoration: underline;
+}
+
+/* Interactive elements like .tipps-interaktiv, #progress-form, #mini-test from the peach theme are for specific subpages, keep them. */
 .tipps-interaktiv {
   max-width: 1000px;
   margin: 40px auto;
@@ -425,8 +257,8 @@ header {
 }
 
 .tipps-block {
-  background-color: var(--white);
-  border: 2px solid var(--peach);
+  background-color: var(--color-light);
+  border: 2px solid var(--color-accent); /* Keep peach for these specific interactive elements */
   border-radius: 12px;
   margin-bottom: 20px;
   overflow: hidden;
@@ -435,8 +267,8 @@ header {
 }
 
 .tipps-block summary {
-  background-color: var(--peach);
-  color: var(--white);
+  background-color: var(--color-accent);
+  color: var(--color-light);
   padding: 15px 20px;
   font-weight: bold;
   font-size: 1.1em;
@@ -445,13 +277,13 @@ header {
 }
 
 .tipps-block[open] summary {
-  background-color: var(--lightgreen);
-  color: var(--dark);
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
 }
 
 .tipps-block div {
   padding: 20px;
-  background-color: var(--cream);
+  background-color: var(--color-background-main);
   animation: fadeIn 0.3s ease-in-out;
 }
 
@@ -466,7 +298,6 @@ header {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* === Fortschrittsfeld & Mini-Test === */
 #progress-form label,
 #mini-test label {
   display: block;
@@ -482,16 +313,85 @@ header {
 #reward-message,
 #mini-result {
   transition: opacity 0.3s ease-in-out;
-  color: var(--peach);
+  color: var(--color-accent); /* Keep peach for these specific interactive elements */
   margin-top: 10px;
   font-weight: bold;
 }
 
 #mini-test {
-  background-color: var(--white);
-  border: 2px solid var(--peach);
+  background-color: var(--color-light);
+  border: 2px solid var(--color-accent); /* Keep peach for these specific interactive elements */
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
   margin-top: 20px;
+}
+
+/* Keyframes for initial page load animation */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes for scrolling hero background */
+@keyframes scrollBackground {
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: -200%; /* Adjust this value based on SVG pattern width for perfect loop */
+  }
+}
+
+/* Class to assist JS with hero content update transitions */
+.fade-out-content {
+  opacity: 0 !important;
+  transform: translateY(10px) !important;
+}
+
+/* Carousel Styles */
+.carousel-container {
+  position: relative;
+  max-width: 1200px; /* Adjust as needed, can be wider than gallery to show buttons */
+  margin: 40px auto; /* Centering the carousel */
+  padding: 0 50px; /* Space for buttons */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the gallery if it's narrower than container */
+  animation: fadeInSlideUp 0.8s ease-out 0.2s forwards; /* Keep animation from old gallery */
+}
+
+.carousel-button {
+  background-color: var(--color-secondary);
+  color: var(--color-light);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute; /* Position them absolutely within the container */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+  background-color: var(--color-accent);
+}
+
+#carousel-button-prev {
+  left: 5px; /* Adjust positioning */
+}
+
+#carousel-button-next {
+  right: 5px; /* Adjust positioning */
 }
