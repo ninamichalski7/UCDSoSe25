@@ -1,10 +1,180 @@
-<!doctype html>
-<html>
+
+<!DOCTYPE html>
+<html lang="de">
 <head>
-<meta charset="UTF-8">
-<title>Unbenanntes Dokument</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emotionale Auswirkungen</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .page-heading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 50px 0 40px 0;
+    }
+    .search-bar {
+      background: #fff;
+      padding: 18px 32px;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      font-size: 2em;
+      display: flex;
+      align-items: center;
+      min-width: 320px;
+      max-width: 90%;
+    }
+    .search-icon {
+      margin-right: 12px;
+      color: #bbb;
+    }
+    .typed-text {
+      color: var(--peach);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .cursor {
+      font-weight: bold;
+      color: var(--peach);
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .hero-zitat {
+      background: linear-gradient(135deg, #da7d71, #c96a60);
+      padding: 40px 20px;
+      text-align: center;
+      font-style: italic;
+      font-size: 1.3em;
+      color: var(--white);
+      border-radius: 12px;
+      margin: 40px auto;
+      max-width: 900px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .vergleich-cards {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      margin: 60px 0;
+      flex-wrap: wrap;
+    }
+    .vergleich-cards .card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      width: 400px;
+      transition: all 0.3s ease-out;
+    }
+    .vergleich-cards .card:hover {
+      background: linear-gradient(135deg, var(--cream), var(--white));
+    }
+    .vergleich-cards .card h4 {
+      background-color: var(--peach);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 12px 12px 0 0;
+      margin: -30px -30px 20px -30px;
+      font-size: 1.2em;
+    }
+    .realitaetskarte {
+      background-color: var(--white);
+      border-left: 5px solid var(--peach);
+      padding: 24px;
+      margin: 60px auto;
+      max-width: 700px;
+      font-size: 1.1em;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.03);
+    }
+  </style>
 </head>
 
 <body>
+	  <header class="site-header">
+    <nav class="main-nav">
+      <div class="logo">The Social Effect</div>
+      <ul class="nav-right">
+        <li><a href="../index.html">Startseite</a></li>
+        
+        <li class="dropdown-click">
+          <button class="dropdown-toggle">Psychologische Effekte ▼</button>
+          <ul class="dropdown-menu">
+            <li><a href="suchtverhalten-und-abhaengigkeit.html">Suchtverhalten und Abhängigkeit</a></li>
+            <li><a href="emotionale-auswirkungen.html">Emotionale Auswirkungen</a></li>
+            <li><a href="reizueberflutung.html">Reizüberflutung - Konzentrationsschwäche durch Soziale Netzwerke</a></li>
+          </ul>
+        </li>
+			<li><a href="../socialmedia/social-media-netzwerke.html">Social Media Netzwerke</a></li>
+       	 	<li><a href="../fakenews/fake-news-netze.html">Fake News Netze</a></li>
+      </ul>
+    </nav>
+  </header>
+	
+  <main>
+    <div class="page-heading">
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <span class="typed-text" id="typed-text"></span>
+        <span class="cursor">|</span>
+      </div>
+    </div>
+
+    <div class="hero-zitat">
+      „Vergleich macht unglücklich – besonders, wenn wir ständig online messen.“<br />
+      <span>– Realität</span>
+    </div>
+
+    <section class="vergleich-cards">
+      <div class="card">
+        <h4>💔 Wie wirken soziale Medien emotional?</h4>
+        <p>Die ständige Konfrontation mit perfekten Bildern und Erfolgen anderer kann Gefühle von Unzulänglichkeit und Neid auslösen. Wir fühlen uns unter Druck, mithalten zu müssen.</p>
+        <p><strong>Nachgedacht:</strong> Wann hast du dich das letzte Mal durch Social Media kleiner gefühlt?</p>
+      </div>
+      <div class="card">
+        <h4>😟 Welche emotionalen Folgen entstehen?</h4>
+        <ul>
+          <li>Vergleichsdruck und Selbstzweifel</li>
+          <li>Angst, etwas zu verpassen (FOMO)</li>
+          <li>Innere Leere trotz „Likes“</li>
+          <li>Rückzug aus realen Kontakten</li>
+        </ul>
+        <p><strong>Denkanstoß:</strong> Ist dein digitales Ich dein echtes Selbst?</p>
+      </div>
+    </section>
+
+    <div class="realitaetskarte">
+      <h3>💡 Was du tun kannst</h3>
+      <ul>
+        <li>Folge Accounts, die dich inspirieren – nicht frustrieren</li>
+        <li>Vergleiche dich mit dir selbst, nicht mit Filtern</li>
+        <li>Reflektiere regelmäßig dein Medienverhalten</li>
+        <li>Pflege echte Beziehungen offline</li>
+      </ul>
+    </div>
+  </main>
+
+  <a href="psychologische-effekte.html" class="back-link">Zurück zur Übersicht</a>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 The Social Effect</p>
+  </footer>
+
+  <script>
+    const typedText = document.getElementById("typed-text");
+    const text = "Emotionale Auswirkungen";
+    let index = 0;
+    function type() {
+      if (index < text.length) {
+        typedText.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 80);
+      }
+    }
+    window.onload = type;
+  </script>
 </body>
 </html>

@@ -62,15 +62,18 @@ header {
 .hero {
   position: relative;
   width: 100%;
-  min-height: 60vh; /* weniger als 100vh, damit’s auch auf Unterseiten nutzbar wäre */
+  min-height: 60vh;
   background-image: url("bilder/The Social Effekt.png");
-  background-size: cover;
-  background-position: center;
+  background-size: cover;             /* Skaliert das Bild proportional */
+  background-position: center center; /* Zentriert das Bild */
+  background-repeat: no-repeat;       /* Verhindert Wiederholung */
+  background-attachment: scroll;      /* Optional: Bild bewegt sich beim Scrollen */
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding-left: 5%;
 }
+
 
 .hero-text {
   background-color: rgba(247, 239, 218, 0.9);
@@ -117,6 +120,24 @@ header {
   text-decoration: none;
   font-weight: bold;
 }
+
+.container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+.site-footer a {
+  color: white;
+  text-decoration: none; /* entfernt Unterstreichung */
+}
+
+.site-footer a:hover {
+  text-decoration: underline; /* fügt beim Hover eine Unterstreichung hinzu */
+}
+
 
 /* Optional: generischer Abschnittsstil für Unterseiten */
 .page-content {
