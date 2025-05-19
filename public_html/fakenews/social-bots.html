@@ -4,6 +4,152 @@
 <meta charset="UTF-8">
 <title>Social Bots</title>
 	<link rel="stylesheet" href="../style.css" />
+	
+	<style>
+		.image-layout {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .hero-image img {
+	  dis
+      max-width: 400px;
+      width: 100%;
+    }	
+		
+    .page-heading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 50px 0 40px 0;
+    }
+
+    .search-bar {
+      background: #fff;
+      padding: 18px 32px;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      font-size: 2em;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      min-width: 320px;
+      max-width: 90%;
+    }
+
+    .search-icon {
+      margin-right: 12px;
+      color: #bbb;
+    }
+
+    .typed-text {
+      color: var(--peach);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .cursor {
+      font-weight: bold;
+      color: var(--peach);
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .hero-zitat {
+      background: linear-gradient(135deg, #da7d71, #c96a60);
+      padding: 40px 20px;
+      text-align: center;
+      font-style: italic;
+      font-size: 1.3em;
+      color: var(--white);
+      border-radius: 12px;
+      margin: 40px auto;
+      max-width: 900px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      animation: fadeInQuote 1s ease-in-out;
+    }
+
+    .vergleich-cards {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      margin: 60px 0;
+    }
+
+    .vergleich-cards .card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      width: 400px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+      cursor: pointer;
+    }
+
+    .vergleich-cards .card.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .vergleich-cards .card:hover {
+      background: linear-gradient(135deg, var(--cream), var(--white));
+    }
+
+    .vergleich-cards .card h4 {
+      background-color: var(--peach);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 12px 12px 0 0;
+      margin: -30px -30px 20px -30px;
+      font-size: 1.2em;
+    }
+
+    .asym-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 80px auto;
+    }
+
+    .asym-grid .box {
+      background-color: var(--white);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    .asym-grid .box h3 {
+      margin-top: 0;
+    }
+
+    .realitaetskarte {
+      background-color: var(--white);
+      border-left: 5px solid var(--peach);
+      padding: 24px;
+      margin: 60px auto;
+      max-width: 700px;
+      font-size: 1.1em;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.03);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 60px auto 0 auto;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
@@ -29,9 +175,139 @@
     </nav>
   </header>
 	
-	<main>
-	
+<main class="tipps-interaktiv">
+    <div class="page-heading">
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <span class="typed-text" id="typed-text"></span>
+        <span class="cursor">|</span>
+      </div>
+    </div>
+
+    <div class="hero-zitat">
+      „Unsichtbare Stimmen im Netz – laut, zahlreich und selten echt.“<br />
+      <span>– Realität</span>
+    </div>
+		
+		  <section class="hero-section">
+      <div class="hero-container">
+        <div class="hero-text">
+          <p class="hero-label">Hey, du!</p>
+          <h1>Weißt du eigentlich was Social Bots sind?...</h1>
+          <p class="hero-desc">
+         Automatisierte Accounts beeinflussen Diskussionen, verbreiten Trends und verzerren Meinungsbilder – oft, ohne dass wir es merken. Sie täuschen echte Nutzer*innen vor, reagieren blitzschnell auf Themen und verstärken gezielt bestimmte Narrative. Wer Social Bots nicht erkennt, läuft Gefahr, sich von digitalem Lärm statt von echten Meinungen leiten zu lassen.
+          </p>
+          <a href="#unterthemen" class="button">Mehr erfahren →</a>
+        </div>
+		  
+		  <div class="hero-image">
+          <img src="../bilder/SocialBot.svg" alt="Verifizierte Handynachricht" />
+		  </div>
+      </div>
+    </section>
+
+		
+		<section id="tipps" class="tipps-interaktiv">
+      <details class="tipps-block">
+        <summary>🖥️ Überprüfe die Quelle</summary>
+        <div>
+          <p>Nicht jede Website ist vertrauenswürdig – auch wenn sie professionell aussieht.</p>
+			<p><strong>➡ Stelle dir folgende Fragen:</strong></p>
+          <ul>
+            <li>Wer steckt hinter der Seite? Gibt es ein Impressum?</li>
+            <li>Handelt es sich um ein bekanntes, journalistisch arbeitendes Medium (z. B. öffentlich-rechtliche Sender, etablierte Zeitungen)?</li>
+            <li>Wird die Information durch Fachleute oder wissenschaftliche Institutionen gestützt?</li>
+          </ul>
+          <p><strong>🔎 Tipp: </strong>Gib den Namen der Seite bei „Mimikama“, „Correctiv“ oder in einer Suchmaschine ein, um zu prüfen, ob es sich um bekannte Fake-News-Quellen handelt.</p>
+        </div>
+      </details>
+			
+			<details class="tipps-block">
+        <summary>🔍 Suche nach Gegenbelegen</summary>
+        <div>
+          <p>Wenn etwas überraschend oder sensationell klingt, solltest du aktiv nach weiteren Informationen suchen – am besten aus verschiedenen, unabhängigen Quellen.</p>
+			<p><strong>➡ So gehst du vor:</strong></p>
+          <ul>
+            <li>Suche mit neutralen Begriffen wie „Studie Schokolade Alzheimer“.</li>
+            <li>Achte auf das Veröffentlichungsdatum und wer die Informationen verbreitet.</li>
+            <li>Wenn du nichts findest, was die Behauptung glaubwürdig stützt, ist Skepsis angebracht.</li>
+          </ul>
+          <p><strong>💡 Wichtig:</strong> Eine seriöse Nachricht ist meist nicht nur auf einer einzigen Seite zu finden, sondern wird durch mehrere Quellen bestätigt.</p>
+        </div>
+      </details>
+		
+			
+				<details class="tipps-block">
+        <summary>📋 Achte auf reißerische Sprache</summary>
+        <div>
+          <p>Fake News nutzen bewusst übertriebene oder schockierende Formulierungen, um Aufmerksamkeit zu erzeugen.</p>
+			<p><strong>➡ Warnsignale sind zum Beispiel:</strong></p>
+          <ul>
+            <li>Wörter wie „Skandal!“, „verheimlicht“, „endlich aufgedeckt“, „Was niemand weiß…“</li>
+            <li>Viele Ausrufezeichen und GROSSBUCHSTABEN</li>
+            <li>Starke Emotionalisierung: Angst, Wut, Empörung</li>
+          </ul>
+          <p><strong>⚠️ Achte auch auf die Bildsprache:</strong> Dramatische Bilder, schlecht bearbeitete Grafiken oder aus dem Zusammenhang gerissene Fotos sind typische Elemente.</p>
+        </div>
+      </details>
+			
+			
+			<details class="tipps-block">
+        <summary>🛜 Vermeide das schnelle Weiterleiten ungeprüfter Infos</summary>
+        <div>
+          <p>Selbst wenn du skeptisch bist – viele Menschen teilen Inhalte aus Neugier oder Spaß weiter.</p>
+			<p><strong>➡ Das Problem: Jede Weiterleitung kann zur Verbreitung von Desinformation beitragen – mit echten gesellschaftlichen Folgen (z. B. Misstrauen, Panik oder sogar politische Radikalisierung).</strong> <br> <br>
+			✅ Deshalb gilt:</p>
+          <ul>
+            <li>Erst denken, dann teilen.</li>
+            <li>Besser: Inhalte mit einem Faktencheck-Tool prüfen, bevor du sie verbreitest.</li>
+            <li>Oder: Gar nicht teilen, wenn du dir unsicher bist.</li>
+          </ul>
+       
+        </div>
+      </details>
+			  <a href="fake-news-netze.html" class="back-link">Zurück zur Übersicht</a>
+		</section>
+			
+		<script>
+    const typedText = document.getElementById("typed-text");
+    const text = "Social Bots - Wie wir auf sie reinfallen.";
+    let index = 0;
+    function type() {
+      if (index < text.length) {
+        typedText.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 80);
+      }
+    }
+    window.onload = type;
+
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+
+    document.getElementById('scroll-to-ki').addEventListener('click', () => {
+      document.getElementById('ki-section').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('scroll-to-reality').addEventListener('click', () => {
+      document.getElementById('reality-reminder').scrollIntoView({ behavior: 'smooth' });
+    });
+	</script>
+		
 	</main>
+	
 	
 	 <footer class="site-footer">
     <p>&copy; 2025 The Social Effect</p>
