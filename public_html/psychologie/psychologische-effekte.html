@@ -3,48 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Psychologische Effekte – The Social Effect</title>
+  <title>Psychologische Effekte</title>
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    .image-layout {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .hero-image img {
+      max-width: 400px;
+      width: 100%;
+    }
+  </style>
 </head>
+
 <body>
-  <header>
+  <header class="site-header">
     <nav class="main-nav">
-      <div class="logo">  <a href="../index.html"> The Social Effect </a></div>
+      <div class="logo">The Social Effect</div>
       <ul class="nav-right">
-		<li><a href="../index.html">Startseite</a></li>
-        <li><a href="../psychologie/psychologische-effekte.html">Psychologische Effekte</a></li>
-        <li><a href="../socialmedia/social-media-netzwerke.html">Social Media Netzwerke</a></li>
-        <li><a href="../fakenews/fake-news-netze.html">Fake-News-Netze</a></li>
+        <li><a href="../index.html">Startseite</a></li>
+        
+        <!-- Hier wird das Dropdown-Menü eingefügt -->
+        <li class="dropdown-click">
+          <button class="dropdown-toggle">Psychologische Effekte ▼</button>
+          <ul class="dropdown-menu">
+            <li><a href="suchtverhalten-und-abhaengigkeit.html">Suchtverhalten und Abhängigkeit</a></li>
+            <li><a href="emotionale-auswirkungen.html">Emotionale Auswirkungen</a></li>
+            <li><a href="reizueberflutung.html">Reizüberflutung - Konzentrationsschwäche durch Soziale Netzwerke</a></li>
+          </ul>
+        </li>
+			<li><a href="../socialmedia/social-media-netzwerke.html">Social Media Netzwerke</a></li>
+       	 	<li><a href="../fakenews/fake-news-netze.html">Fake News Netze</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="page-content">
-    <h1>Psychologische Effekte</h1>
-    <p>
-      Soziale Medien beeinflussen unser Denken, Fühlen und Handeln. Hinter vielen Verhaltensweisen stehen tief verwurzelte psychologische Effekte.
-    </p>
+  <main>
+    <section class="hero-section">
+  	<div class="hero-container image-layout">
+    <div class="hero-text">
+      <p class="hero-label">Psychologische Effekte</p>
+      <h1>Was Social Media mit deinem Kopf macht</h1>
+      <p class="hero-desc">
+        Stundenlang scrollen, liken, vergleichen – soziale Netzwerke prägen, wie wir denken, fühlen und handeln.
+        Doch oft geschieht das unbewusst. Diese Seite zeigt dir, welche psychologischen Auswirkungen dahinterstecken –
+        und wie du gesünder damit umgehen kannst.
+      </p>
+      <a href="#unterthemen" class="button">Mehr erfahren →</a>
+    </div>
 
-    <h2>Was sind psychologische Effekte?</h2>
-    <p>
-      Psychologische Effekte sind unbewusste Denkmuster oder Reaktionen, die unsere Wahrnehmung, unser Urteilsvermögen und unser Verhalten beeinflussen.
-    </p>
+    <div class="hero-image">
+      <img src="../bilder/PsychologischeEffekte.png" alt="Unsere Psyche und Social Media" />
+    </div>
+  </div>
+</section>
 
-    <h2>Wichtige Effekte im Kontext sozialer Medien:</h2>
-    <ul>
-      <li><strong>Bestätigungsfehler (Confirmation Bias):</strong> Wir nehmen bevorzugt Informationen wahr, die unsere bestehenden Meinungen bestätigen.</li>
-      <li><strong>Vergleichseffekt:</strong> Wir vergleichen uns ständig mit anderen – meist mit idealisierten Darstellungen.</li>
-      <li><strong>Gruppendenken (Groupthink):</strong> In geschlossenen Netzwerken neigen Gruppen dazu, widersprüchliche Meinungen auszublenden.</li>
-      <li><strong>Dopamin-Belohnung:</strong> Likes und Kommentare aktivieren das Belohnungssystem im Gehirn – ähnlich wie bei Drogen.</li>
-    </ul>
+    <section class="themen-section" id="unterthemen">
+      <div class="thema-box">
+        <h2>Suchtverhalten & Abhängigkeit</h2>
+        <p>Warum Social Media süchtig macht – und was du tun kannst, um Kontrolle und Fokus zurückzugewinnen.</p>
+        <a href="suchtverhalten-und-abhaengigkeit.html">Mehr dazu →</a>
+      </div>
+      <div class="thema-box">
+        <h2>Emotionale Auswirkungen</h2>
+        <p>Zwischen Vergleichsdruck, FOMO und Selbstzweifeln – Die emotionale Achterbahn sozialer Medien</p>
+        <a href="emotionale-auswirkungen.html">Mehr dazu →</a>
+      </div>
+      <div class="thema-box">
+        <h2>Reizüberflutung - Konzentrationsschwäche durch Soziale Netzwerke</h2>
+        <p>Wie ständige Reize deine Konzentration zerschneiden – und was hilft, wieder bei dir zu bleiben.</p>
+        <a href="reizueberflutung.html">Mehr dazu →</a>
+      </div>
+    </section>
+  </main>
 
-    <p>
-      Diese Mechanismen zu verstehen, hilft dabei, sich selbst und andere besser zu reflektieren – und bewusster mit Medien umzugehen.
-    </p>
-
-    <p>
-      Lies auch weiter über <a href="../socialmedia/social-media-netzwerke.html">Social Media Netzwerke</a> oder <a href="../fakenews/fake-news-netze.html">Fake News Netze</a>.
-    </p>
-  </section>
+  <footer class="site-footer">
+    <p>&copy; 2025 The Social Effect</p>
+  </footer>
 </body>
 </html>
